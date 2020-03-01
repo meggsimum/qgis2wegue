@@ -23,13 +23,13 @@ hasProcessingProvider=no
 # changelog=
 
 # Tags are comma separated with spaces allowed
-tags=python, wegue, openlayers, web
+tags=python, wegue, openlayers, web, vue.js, export, wms, wfs, geojson
 
 homepage=https://github.com/meggsimum/qgis2wegue
 category=Plugins
 icon=icon.png
 # experimental flag
-experimental=False
+experimental=true
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False

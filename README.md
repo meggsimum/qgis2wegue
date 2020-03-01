@@ -1,6 +1,10 @@
 # QGIS2Wegue 
 
-This is a QGIS plugin for creating a [Wegue](https://github.com/meggsimum/wegue) configuration based on a QGIS project.
+A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configurations based on a QGIS project.
+
+## Disclaimer
+
+This plugin is still work in progress and only works with `KML` and `GeoJSON` files so far.
 
 ## Installation
 
@@ -13,6 +17,8 @@ cd ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins
 git clone https://github.com/meggsimum/qgis2wegue
 ```
 
-- Restart QGIS
+- restart QGIS
 - open the plugin manager and activate the plugin
-- now the plugin should show up in the toolbar
+- the plugin should show up in the toolbar
+
+
