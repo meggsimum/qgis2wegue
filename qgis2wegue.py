@@ -36,6 +36,7 @@ import os.path
 from .WegueConfiguration import WegueConfiguration
 
 import re
+from urllib.parse import parse_qs
 
 
 def center2webmercator(center, qgis_instance):
@@ -114,14 +115,14 @@ def identify_wegue_layer_type(layer):
     wegue_layer_type = 'unknown'
     providerType = layer.providerType().lower()
     if providerType == 'wms':
-        # TODO: how are WMS and XYZ different?
-        # print('wms or xyz')
-
-        # only works properly with raster
-        # p = parse_qs(layer.source())
-        # pass
-
-        wegue_layer_type = 'WMS'
+        source = layer.source()
+        d = parse_qs(source)
+        if "type" in d and d["type"][0] == "xyz":
+            wegue_layer_type = 'XYZ'
+        elif "tileMatrixSet" in d:
+            wegue_layer_type = 'WMTS' # currently not supported in Wegue
+        else:
+            wegue_layer_type = 'WMS'
 
     elif providerType == 'ogr':
         # TODO: find out if vector is in "MVT", "GeoJSON", "TopoJSON", "KML"
