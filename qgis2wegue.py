@@ -35,6 +35,8 @@ import os.path
 # Import wegue logic
 from .WegueConfiguration import WegueConfiguration
 
+import re
+
 
 def center2webmercator(center, qgis_instance):
     """
@@ -110,15 +112,16 @@ def identify_wegue_layer_type(layer):
     """
 
     wegue_layer_type = 'unknown'
-
-    providerType = layer.providerType()
+    providerType = layer.providerType().lower()
     if providerType == 'wms':
         # TODO: how are WMS and XYZ different?
         # print('wms or xyz')
 
         # only works properly with raster
         # p = parse_qs(layer.source())
-        pass
+        # pass
+
+        wegue_layer_type = 'WMS'
 
     elif providerType == 'ogr':
         # TODO: find out if vector is in "MVT", "GeoJSON", "TopoJSON", "KML"
@@ -323,6 +326,18 @@ class qgis2wegue:
                 wc.add_vector_layer(name=name,
                                     format=wegue_layer_type,
                                     url=url)
+
+            elif wegue_layer_type == 'WMS':
+                # WMS param detection proudly taken from the great qgis2web
+                # project. All creadits to the qgis2web devs
+                # https://github.com/tomchadwin/qgis2web
+                source = layer.source()
+                layers = re.search(r"layers=(.*?)(?:&|$)", source).groups(0)[0]
+                url = re.search(r"url=(.*?)(?:&|$)", source).groups(0)[0]
+                name = layer.name()
+
+                wc.add_wms_layer(name, layers, url)
+
         wc.add_osm_layer()
 
         # Run the dialog event loop
