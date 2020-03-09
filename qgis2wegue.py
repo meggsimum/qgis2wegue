@@ -24,7 +24,7 @@
 from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
-from qgis.core import QgsMessageLog, QgsProject, QgsCoordinateReferenceSystem, QgsCoordinateTransform
+from qgis.core import QgsApplication, QgsMessageLog, QgsProject, QgsCoordinateReferenceSystem, QgsCoordinateTransform
 
 # Initialize Qt resources from file resources.py
 from .resources import *
@@ -115,6 +115,9 @@ def identify_wegue_layer_type(layer):
     wegue_layer_type = 'unknown'
     providerType = layer.providerType().lower()
     if providerType == 'wms':
+        # Raster layer distinction proudly taken from the great qgis2web
+        # project. All creadits to the qgis2web devs
+        # https://github.com/tomchadwin/qgis2web
         source = layer.source()
         d = parse_qs(source)
         if "type" in d and d["type"][0] == "xyz":
@@ -136,6 +139,26 @@ def identify_wegue_layer_type(layer):
             wegue_layer_type = 'GeoJSON'
 
     return wegue_layer_type
+
+
+def get_wms_getmap_url(wmsLayer):
+    """
+    Detects the Get-Map URL for a QGIS WMS layer
+    """
+
+    wms_getmap_url = None
+
+    # derive WMS GetMap URL from layer metdata
+    htmlMetadata = wmsLayer.htmlMetadata()
+    match = re.search('GetMap-URL<\/td><td>(.*)<\/td><\/tr><tr><td>GetFeatureInfoUrl', htmlMetadata)
+    layersGroup = match.groups(0)
+    wms_getmap_url = ''.join(layersGroup)
+
+    # use source URL as fallback
+    if wms_getmap_url is None:
+        wms_getmap_url = re.search(r"url=(.*?)(?:&|$)", source).groups(0)[0]
+
+    return wms_getmap_url
 
 
 class qgis2wegue:
@@ -329,12 +352,9 @@ class qgis2wegue:
                                     url=url)
 
             elif wegue_layer_type == 'WMS':
-                # WMS param detection proudly taken from the great qgis2web
-                # project. All creadits to the qgis2web devs
-                # https://github.com/tomchadwin/qgis2web
                 source = layer.source()
                 layers = re.search(r"layers=(.*?)(?:&|$)", source).groups(0)[0]
-                url = re.search(r"url=(.*?)(?:&|$)", source).groups(0)[0]
+                url = get_wms_getmap_url(layer)
                 name = layer.name()
 
                 wc.add_wms_layer(name, layers, url)
