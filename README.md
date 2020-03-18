@@ -4,7 +4,10 @@ A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configura
 
 ## Disclaimer
 
-This plugin is still work in progress and only works with `KML` and `GeoJSON` files so far.
+This plugin is still work in progress. Supported formats so far:
+- `KML`
+- `GeoJSON`
+- `WMS`
 
 ## Installation
 

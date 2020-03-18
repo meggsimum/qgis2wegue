@@ -130,10 +130,6 @@ deploy: compile doc transcompile
 	# Copy extra directories if any
 	(foreach EXTRA_DIR,(EXTRA_DIRS), cp -R (EXTRA_DIR) (HOME)/(QGISDIR)/python/plugins/(PLUGINNAME)/;)
 
-jm_deploy:
-	rm -rf /home/jakobmiksch/.local/share/QGIS/QGIS3/profiles/default/python/plugins/qgis2wegue
-	cp -r /home/jakobmiksch/Daten/08_Projekte_selbstständig/2019-11-XX_QGIS2Wegue/qgis2wegue /home/jakobmiksch/.local/share/QGIS/QGIS3/profiles/default/python/plugins/
-
 
 # The dclean target removes compiled python files from plugin directory
 # also deletes any .git entry
