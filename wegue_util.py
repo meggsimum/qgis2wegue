@@ -1,7 +1,53 @@
-from qgis.core import QgsApplication, QgsMessageLog, QgsProject, QgsCoordinateTransform, QgsCoordinateReferenceSystem
-
 import re
 from urllib.parse import parse_qs
+from qgis.core import QgsApplication, QgsMessageLog, QgsProject, QgsCoordinateTransform, QgsCoordinateReferenceSystem
+from .wegueConfiguration import WegueConfiguration
+
+
+def create_wegue_conf_from_qgis(canvas):
+    """
+    Loops through all QGIS layers and converts
+    them to a Wegue configuration
+    """
+
+    scale = canvas.scale()
+    center = canvas.center()
+
+    qgis_instance = QgsProject.instance()
+
+    center_3857 = center2webmercator(center, qgis_instance)
+
+    zoom_level = scale2zoom(scale)
+
+    # create Wegue configuration
+    wc = WegueConfiguration()
+
+    # add configuration from project
+    wc.mapZoom = zoom_level
+    wc.mapCenter = (center_3857.x(), center_3857.y())
+
+    # add map layers
+    project_layers = qgis_instance.mapLayers()
+    for layer_id in project_layers:
+        layer = project_layers[layer_id]
+        wegue_layer_type = identify_wegue_layer_type(layer)
+
+        if wegue_layer_type in ['GeoJSON', 'KML']:
+            name = layer.name()
+            url = layer.source().split('|')[0]
+            wc.add_vector_layer(name=name,
+                                format=wegue_layer_type,
+                                url=url)
+
+        elif wegue_layer_type == 'WMS':
+            source = layer.source()
+            layers = re.search(r"layers=(.*?)(?:&|$)", source).groups(0)[0]
+            url = get_wms_getmap_url(layer)
+            name = layer.name()
+
+            wc.add_wms_layer(name, layers, url)
+
+    return wc
 
 
 def center2webmercator(center, qgis_instance):
@@ -15,7 +61,7 @@ def center2webmercator(center, qgis_instance):
     crs_source = qgis_instance.crs()
 
     # TODO apparently QgsCoordinateReferenceSystem is deprecated
-    
+
     # define WebMercator(EPSG:3857)
     crs_destination = QgsCoordinateReferenceSystem(3857)
 
@@ -89,16 +135,12 @@ def identify_wegue_layer_type(layer):
         if "type" in d and d["type"][0] == "xyz":
             wegue_layer_type = 'XYZ'
         elif "tileMatrixSet" in d:
-            wegue_layer_type = 'WMTS' # currently not supported in Wegue
+            wegue_layer_type = 'WMTS'  # currently not supported in Wegue
         else:
             wegue_layer_type = 'WMS'
 
     elif providerType == 'ogr':
         # TODO: find out if vector is in "MVT", "GeoJSON", "TopoJSON", "KML"
-
-        # TODO: use layer name - currently unused
-        name = layer.name()
-
 
         url = layer.source().split('|')[0]
 
@@ -119,7 +161,9 @@ def get_wms_getmap_url(wmsLayer):
 
     # derive WMS GetMap URL from layer metdata
     htmlMetadata = wmsLayer.htmlMetadata()
-    match = re.search('GetMapUrl<\/td><td>(.*)<\/td><\/tr><tr><td>GetFeatureInfoUrl', htmlMetadata)
+    match = re.search(
+        r'GetMapUrl<\/td><td>(.*)<\/td><\/tr><tr><td>GetFeatureInfoUrl',
+        htmlMetadata)
 
     layersGroup = match.groups(0)
     wms_getmap_url = ''.join(layersGroup)

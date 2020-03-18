@@ -32,13 +32,7 @@ from .resources import *
 from .qgis2wegue_dialog import qgis2wegueDialog
 import os.path
 
-# Import wegue logic
-from .wegueConfiguration import WegueConfiguration
-
-from .wegue_util import center2webmercator, scale2zoom, \
-     identify_wegue_layer_type, get_wms_getmap_url
-
-import re
+from .wegue_util import create_wegue_conf_from_qgis
 
 
 class qgis2wegue:
@@ -202,44 +196,7 @@ class qgis2wegue:
         # get properties from QGIS project
         canvas = self.iface.mapCanvas()
 
-        scale = canvas.scale()
-        center = canvas.center()
-
-        qgis_instance = QgsProject.instance()
-
-        center_3857 = center2webmercator(center, qgis_instance)
-
-        zoom_level = scale2zoom(scale)
-
-        # create Wegue configuration
-        wc = WegueConfiguration()
-
-        # add configuration from project
-        wc.mapZoom = zoom_level
-        wc.mapCenter = (center_3857.x(), center_3857.y())
-
-        # add map layers
-        project_layers = qgis_instance.mapLayers()
-        for layer_id in project_layers:
-            layer = project_layers[layer_id]
-            wegue_layer_type = identify_wegue_layer_type(layer)
-
-            if wegue_layer_type in ['GeoJSON', 'KML']:
-                name = layer.name()
-                url = layer.source().split('|')[0]
-                wc.add_vector_layer(name=name,
-                                    format=wegue_layer_type,
-                                    url=url)
-
-            elif wegue_layer_type == 'WMS':
-                source = layer.source()
-                layers = re.search(r"layers=(.*?)(?:&|$)", source).groups(0)[0]
-                url = get_wms_getmap_url(layer)
-                name = layer.name()
-
-                wc.add_wms_layer(name, layers, url)
-
-        wc.add_osm_layer()
+        wc = create_wegue_conf_from_qgis(canvas)
 
         # Run the dialog event loop
         result = self.dlg.exec_()

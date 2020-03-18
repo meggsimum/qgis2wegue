@@ -1,11 +1,4 @@
 import json
-import logging
-
-logging.basicConfig(
-    format='%(asctime)s [%(levelname)s] %(message)s',
-    level=logging.INFO,
-    datefmt="%Y-%m-%d %H:%M:%S"
-)
 
 
 class WegueConfiguration:
@@ -82,19 +75,17 @@ class WegueConfiguration:
         Store Wegue configuration as JSON file
         :param path:
         """
-        
+
         # TODO solve more elegantly
         fixed_layers = []
         for layer in self.mapLayers:
             layer = self._remove_empty_keys(layer)
             fixed_layers.append(layer)
-        
+
         self.mapLayers = fixed_layers
 
         with open(path, 'w') as path:
             json.dump(self.__dict__, path, indent=2)
-
-        logging.info('Wrote Wegue Configuration to: \n{}'.format(path))
 
     def is_valid(self):
         """
@@ -245,32 +236,9 @@ class WegueConfiguration:
     def _create_layer_id(self, name):
         """Creates a layer id based on the name of the layer
         :param name: the layer's full name
-        :return: layer identification name without spaces and special characters
+        :return: layer identification name without spaces
+                 and special characters
         """
         lid = ''.join(e for e in name if e.isalnum())
         lid = lid.lower()
         return lid
-
-    def add_example_layers(self):
-        """
-        Add example layers. Only for testing.
-        :return:
-        """
-        example_layers = [{
-            "type": "WMS",
-            "lid": "ahocevar-wms",
-            "name": "WMS (ahocevar)",
-            "format": "image/png",
-            "layers": "topp:states",
-            "url": "https://ahocevar.com/geoserver/wms",
-            "transparent": True,
-            "singleTile": False,
-            "projection": "EPSG:3857",
-            "attribution": "",
-            "isBaseLayer": False,
-            "visible": False,
-            "displayInLayerList": True
-        }]
-
-        self.add_osm_layer()
-        self.mapLayers.extend(example_layers)
