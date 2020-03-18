@@ -6,8 +6,8 @@ from .wegueConfiguration import WegueConfiguration
 
 def create_wegue_conf_from_qgis(canvas):
     """
-    Loops through all QGIS layers and converts
-    them to a Wegue configuration
+    Loops through all checked layers in the layer tree
+    and converts them to a Wegue configuration
     """
 
     scale = canvas.scale()
@@ -26,10 +26,10 @@ def create_wegue_conf_from_qgis(canvas):
     wc.mapZoom = zoom_level
     wc.mapCenter = (center_3857.x(), center_3857.y())
 
-    # add map layers
-    project_layers = qgis_instance.mapLayers()
-    for layer_id in project_layers:
-        layer = project_layers[layer_id]
+    # loop through checked layers
+    root = qgis_instance.layerTreeRoot()
+    for layer in root.checkedLayers():
+
         wegue_layer_type = identify_wegue_layer_type(layer)
 
         if wegue_layer_type in ['GeoJSON', 'KML']:
