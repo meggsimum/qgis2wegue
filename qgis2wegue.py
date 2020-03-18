@@ -150,7 +150,8 @@ def get_wms_getmap_url(wmsLayer):
 
     # derive WMS GetMap URL from layer metdata
     htmlMetadata = wmsLayer.htmlMetadata()
-    match = re.search('GetMap-URL<\/td><td>(.*)<\/td><\/tr><tr><td>GetFeatureInfoUrl', htmlMetadata)
+    match = re.search('GetMapUrl<\/td><td>(.*)<\/td><\/tr><tr><td>GetFeatureInfoUrl', htmlMetadata)
+
     layersGroup = match.groups(0)
     wms_getmap_url = ''.join(layersGroup)
 
