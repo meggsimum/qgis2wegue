@@ -8,6 +8,7 @@ This plugin is still work in progress. Supported formats so far:
 - `KML`
 - `GeoJSON`
 - `WMS`
+- `XYZ`
 
 ## Installation
 
@@ -25,3 +26,8 @@ git clone https://github.com/meggsimum/qgis2wegue
 - the plugin should show up in the toolbar
 
 
+## Usage
+
+- Add all your desired layers to QGIS
+- Open the plugin, chose a filepath and click `OK`
+- Now you have a configuration file that works with Wegue 
