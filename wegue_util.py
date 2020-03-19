@@ -1,6 +1,7 @@
 import re
 from urllib.parse import parse_qs
-from qgis.core import QgsApplication, QgsMessageLog, QgsProject, QgsCoordinateTransform, QgsCoordinateReferenceSystem
+from qgis.core import QgsProject, QgsCoordinateTransform
+from qgis.core import QgsCoordinateReferenceSystem
 from .wegueConfiguration import WegueConfiguration
 
 
@@ -170,6 +171,7 @@ def get_wms_getmap_url(wmsLayer):
 
     # use source URL as fallback
     if wms_getmap_url is None:
-        wms_getmap_url = re.search(r"url=(.*?)(?:&|$)", source).groups(0)[0]
+        wms_getmap_url = re.search(r"url=(.*?)(?:&|$)",
+                                   wmsLayer.source()).groups(0)[0]
 
     return wms_getmap_url
