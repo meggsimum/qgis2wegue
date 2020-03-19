@@ -101,18 +101,21 @@ class WegueConfiguration:
                       lid="",
                       displayInLayerList=True,
                       visible=True,
-                      opacity=""):
+                      opacity="",
+                      attributions=""):
 
         if not lid:
             lid = self._create_layer_id(name)
 
         xyz_conf = {
+            'type': 'XYZ',
             'name': name,
             'url': url,
             'lid': lid,
             'displayInLayerList': displayInLayerList,
             'visible': visible,
-            'opacity': opacity
+            'opacity': opacity,
+            'attributions': attributions
         }
         self.mapLayers.append(xyz_conf)
 

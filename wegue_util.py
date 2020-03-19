@@ -33,20 +33,30 @@ def create_wegue_conf_from_qgis(canvas):
 
         wegue_layer_type = identify_wegue_layer_type(layer)
 
+        # same for all types
+        name = layer.name()
+        source = layer.source()
+
         if wegue_layer_type in ['GeoJSON', 'KML']:
-            name = layer.name()
-            url = layer.source().split('|')[0]
+            url = source.split('|')[0]
+
             wc.add_vector_layer(name=name,
                                 format=wegue_layer_type,
                                 url=url)
 
         elif wegue_layer_type == 'WMS':
-            source = layer.source()
             layers = re.search(r"layers=(.*?)(?:&|$)", source).groups(0)[0]
             url = get_wms_getmap_url(layer)
-            name = layer.name()
 
             wc.add_wms_layer(name, layers, url)
+
+        elif wegue_layer_type == 'XYZ':
+
+            layer_props = parse_qs(source)
+            url = layer_props['url'][0]
+            attributions = layer_props['referer'][0]
+
+            wc.add_xyz_layer(name, url, attributions=attributions)
 
     return wc
 
