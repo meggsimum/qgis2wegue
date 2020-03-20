@@ -58,6 +58,21 @@ def create_wegue_conf_from_qgis(canvas):
 
             wc.add_xyz_layer(name, url, attributions=attributions)
 
+        elif wegue_layer_type == 'WFS':
+
+            props = get_wfs_properties(source)
+
+            typename = props['typename']
+            url = props['url']
+
+            # TODO: add those parameters
+            extent = layer.extent()
+            crs = layer.crs()
+
+            wc.add_wfs_layer(name=name,
+                             url=url,
+                             typeName=typename)
+
     return wc
 
 
@@ -137,11 +152,12 @@ def identify_wegue_layer_type(layer):
 
     wegue_layer_type = 'unknown'
     providerType = layer.providerType().lower()
+    source = layer.source()
+
     if providerType == 'wms':
         # Raster layer distinction proudly taken from the great qgis2web
         # project. All creadits to the qgis2web devs
         # https://github.com/tomchadwin/qgis2web
-        source = layer.source()
         d = parse_qs(source)
         if "type" in d and d["type"][0] == "xyz":
             wegue_layer_type = 'XYZ'
@@ -151,14 +167,17 @@ def identify_wegue_layer_type(layer):
             wegue_layer_type = 'WMS'
 
     elif providerType == 'ogr':
-        # TODO: find out if vector is in "MVT", "GeoJSON", "TopoJSON", "KML"
 
-        url = layer.source().split('|')[0]
+        url = source.split('|')[0]
 
         if(url.endswith('.kml')):
             wegue_layer_type = 'KML'
         elif(url.endswith('.json') | url.endswith('.geojson')):
             wegue_layer_type = 'GeoJSON'
+
+    elif providerType == 'wfs':
+
+        wegue_layer_type = 'WFS'
 
     return wegue_layer_type
 
@@ -185,3 +204,31 @@ def get_wms_getmap_url(wmsLayer):
                                    wmsLayer.source()).groups(0)[0]
 
     return wms_getmap_url
+
+
+def get_wfs_properties(source):
+    """
+    Extracts the WFS properties from the layer source
+    """
+    # TODO: check if there is a more elegant solution
+
+    # manually converting source into dict
+    source = source.strip()
+    items = source.split(' ')
+
+    # built property dict
+    props = {}
+    for i in items:
+        # extract keys and values
+        spl = i.split('=')
+        k, v = spl[0], spl[1]
+
+        # remove single quote
+        v = v.replace("'", "")
+
+        # handle keys that appear twice
+        if k in props:
+            k = k + '_2'
+
+        props[k] = v
+    return props

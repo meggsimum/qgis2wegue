@@ -1,5 +1,12 @@
 import json
 
+DEFAULT_POINT_STYLE = {
+    "radius": 4,
+    "strokeColor": "rgb(207, 16, 32)",
+    "strokeWidth": 1,
+    "fillColor": "rgba(207, 16, 32, 0.6)"
+}
+
 
 class WegueConfiguration:
     """
@@ -65,7 +72,7 @@ class WegueConfiguration:
 
         for key in conf:
             value = conf[key]
-            if value:
+            if value != "":
                 final_conf[key] = value
 
         return final_conf
@@ -163,13 +170,9 @@ class WegueConfiguration:
         if not lid:
             lid = self._create_layer_id(name)
 
+        # TODO: add different default styles for Line and Polygon
         if not style:
-            style = {
-                "radius": 4,
-                "strokeColor": "rgb(207, 16, 32)",
-                "strokeWidth": 1,
-                "fillColor": "rgba(207, 16, 32, 0.6)"
-            }
+            style = DEFAULT_POINT_STYLE
 
         vector_conf = {
             "type": "VECTOR",
@@ -234,6 +237,47 @@ class WegueConfiguration:
             "serverType": serverType
         }
         self.mapLayers.append(wms_conf)
+
+    def add_wfs_layer(self, name, url,
+                      typeName,
+                      formatConfig="",
+                      wfs_format="GML3",
+                      version="",
+                      projection="",
+                      lid="",
+                      displayInLayerList=True,
+                      visible=True,
+                      opacity="",
+                      extent="",
+                      style="",
+                      attributions="",
+                      loadOnlyVisible="",
+                      maxFeatures=""
+                      ):
+
+        if not lid:
+            lid = self._create_layer_id(name)
+
+        wfs_conf = {
+            "type": "WFS",
+            "lid": lid,
+            "name": name,
+            "url": url,
+            "displayInLayerList": displayInLayerList,
+            "visible": visible,
+            "opacity": opacity,
+            "extent": extent,
+            "style": style,
+            "attributions": attributions,
+            "projection": projection,
+            "version": version,
+            "format": wfs_format,
+            "formatConfig": formatConfig,
+            "typeName": typeName,
+            "loadOnlyVisible": loadOnlyVisible,
+            "maxFeatures": maxFeatures
+        }
+        self.mapLayers.append(wfs_conf)
 
     # TODO: replace umlauts and similar characters
     def _create_layer_id(self, name):
