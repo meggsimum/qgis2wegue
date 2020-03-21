@@ -72,7 +72,7 @@ class WegueConfiguration:
 
         for key in conf:
             value = conf[key]
-            if value:
+            if value != "":
                 final_conf[key] = value
 
         return final_conf
@@ -239,27 +239,23 @@ class WegueConfiguration:
 
     def add_wfs_layer(self, name, url,
                       typeName,
-                      formatConfig,
-                      wfs_format="",
+                      formatConfig="",
+                      wfs_format="GML3",
                       version="",
                       projection="",
                       lid="",
                       displayInLayerList=True,
-                      visible=False,
+                      visible=True,
                       opacity="",
                       extent="",
                       style="",
                       attributions="",
-                      loadOnlyVisible=""
+                      loadOnlyVisible="",
+                      maxFeatures=""
                       ):
-
-        # TODO: What is "formatConfig"?
 
         if not lid:
             lid = self._create_layer_id(name)
-        
-        if not style:
-            style = DEFAULT_STYLE
 
         wfs_conf = {
             "type": "WFS",
@@ -275,12 +271,12 @@ class WegueConfiguration:
             "projection": projection,
             "version": version,
             "format": wfs_format,
-            "formatConfig":formatConfig,
+            "formatConfig": formatConfig,
             "typeName": typeName,
-            "loadOnlyVisible": loadOnlyVisible
-
+            "loadOnlyVisible": loadOnlyVisible,
+            "maxFeatures": maxFeatures
         }
-        self.mapLayers.append(self, wfs_conf)
+        self.mapLayers.append(wfs_conf)
 
     # TODO: replace umlauts and similar characters
     def _create_layer_id(self, name):
