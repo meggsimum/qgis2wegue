@@ -1,6 +1,6 @@
 import json
 
-DEFAULT_STYLE = {
+DEFAULT_POINT_STYLE = {
     "radius": 4,
     "strokeColor": "rgb(207, 16, 32)",
     "strokeWidth": 1,
@@ -170,8 +170,9 @@ class WegueConfiguration:
         if not lid:
             lid = self._create_layer_id(name)
 
+        # TODO: add different default styles for Line and Polygon
         if not style:
-            style = DEFAULT_STYLE
+            style = DEFAULT_POINT_STYLE
 
         vector_conf = {
             "type": "VECTOR",
