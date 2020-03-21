@@ -230,7 +230,7 @@ class WegueConfiguration:
             "projection": projection,
             "attributions": attributions,
             "isBaseLayer": isBaseLayer,
-            "visible": visible,
+            "visible": visible, 
             "opacity": opacity,
             "displayInLayerList": displayInLayerList,
             "extent": extent,

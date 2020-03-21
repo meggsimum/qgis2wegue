@@ -205,7 +205,6 @@ class qgis2wegue:
             # access file path input widget
             q2w_file_widget = self.dlg.q2w_file_widget
 
-            # TODO: check if path is valid (aka not empty)
             # get the path
             user_input = q2w_file_widget.filePath()
 

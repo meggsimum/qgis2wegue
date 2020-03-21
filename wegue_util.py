@@ -186,7 +186,6 @@ def identify_wegue_layer_type(layer):
             wegue_layer_type = 'WMS'
 
     elif providerType == 'ogr':
-        # TODO: find out if vector is in "MVT", "GeoJSON", "TopoJSON", "KML"
 
         url = source.split('|')[0]
 
