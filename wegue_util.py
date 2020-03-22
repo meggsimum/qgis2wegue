@@ -60,36 +60,17 @@ def create_wegue_conf_from_qgis(canvas):
 
         elif wegue_layer_type == 'WFS':
 
-            # manually converting source into dict
-            # TODO: check if there is a more elegant solution
-            source = source.strip()
-            items = source.split(' ')
-
-            # built property dict
-            props = {}
-            for i in items:
-                # extract keys and values
-                spl = i.split('=')
-                k, v = spl[0], spl[1]
-
-                # remove single quote
-                v = v.replace("'", "")
-
-                # handle keys that appear twice
-                if k in props:
-                    k = k + '_2'
-
-                props[k] = v
+            props = get_wfs_properties(source)
 
             typename = props['typename']
             url = props['url']
-            
+
             # TODO: add those parameters
             extent = layer.extent()
             crs = layer.crs()
 
             wc.add_wfs_layer(name=name,
-                             url=url, 
+                             url=url,
                              typeName=typename)
 
     return wc
@@ -223,3 +204,31 @@ def get_wms_getmap_url(wmsLayer):
                                    wmsLayer.source()).groups(0)[0]
 
     return wms_getmap_url
+
+
+def get_wfs_properties(source):
+    """
+    Extracts the WFS properties from the layer source
+    """
+    # TODO: check if there is a more elegant solution
+
+    # manually converting source into dict
+    source = source.strip()
+    items = source.split(' ')
+
+    # built property dict
+    props = {}
+    for i in items:
+        # extract keys and values
+        spl = i.split('=')
+        k, v = spl[0], spl[1]
+
+        # remove single quote
+        v = v.replace("'", "")
+
+        # handle keys that appear twice
+        if k in props:
+            k = k + '_2'
+
+        props[k] = v
+    return props
