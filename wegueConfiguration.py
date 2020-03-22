@@ -1,4 +1,5 @@
 import json
+from unidecode import unidecode
 
 DEFAULT_POINT_STYLE = {
     "radius": 4,
@@ -92,7 +93,7 @@ class WegueConfiguration:
         self.mapLayers = fixed_layers
 
         with open(path, 'w') as path:
-            json.dump(self.__dict__, path, indent=2)
+            json.dump(self.__dict__, path, indent=2, ensure_ascii=False)
 
     def is_valid(self):
         """
@@ -203,7 +204,7 @@ class WegueConfiguration:
                       projection="EPSG:3857",
                       attributions="",
                       isBaseLayer=False,
-                      visible=False,
+                      visible=True,
                       opacity="",
                       displayInLayerList=True,
                       extent="",
@@ -279,13 +280,33 @@ class WegueConfiguration:
         }
         self.mapLayers.append(wfs_conf)
 
-    # TODO: replace umlauts and similar characters
     def _create_layer_id(self, name):
         """Creates a layer id based on the name of the layer
         :param name: the layer's full name
         :return: layer identification name without spaces
                  and special characters
         """
-        lid = ''.join(e for e in name if e.isalnum())
-        lid = lid.lower()
+
+        lid = name.strip().lower()
+        
+        # special for German umlauts, because not handled in unidecode package
+
+        lid = lid.replace('ä','ae')
+        lid = lid.replace('ö','oe')
+        lid = lid.replace('ü','üe')
+
+        # replace special characters with ASCII equivalent 
+        lid = unidecode(lid)
+
+        # replace whitespace with underscore
+        lid = lid.replace(" ", "_")
+
+        # replace other characters with underscore
+        lid = lid.replace("-", "_")
+        lid = lid.replace(":", "_")
+
+        # only one underscore in a row
+        while "__" in lid:
+            lid = lid.replace("__","_")
+        
         return lid
