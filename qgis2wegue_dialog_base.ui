@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>706</width>
-    <height>345</height>
+    <width>742</width>
+    <height>398</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>10</x>
      <y>20</y>
-     <width>681</width>
-     <height>301</height>
+     <width>721</width>
+     <height>364</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -74,6 +74,37 @@ p, li { white-space: pre-wrap; }
      <widget class="QLineEdit" name="q2w_footer_right_widget"/>
     </item>
     <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Color:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QgsColorButton" name="q2w_color_widget">
+      <property name="iconSize">
+       <size>
+        <width>98</width>
+        <height>4</height>
+       </size>
+      </property>
+      <property name="color">
+       <color>
+        <red>204</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+      <property name="defaultColor">
+       <color>
+        <red>204</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QLabel" name="label">
       <property name="text">
        <string>Path to Wegue Configuration file:</string>
@@ -101,6 +132,11 @@ p, li { white-space: pre-wrap; }
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>QgsColorButton</class>
+   <extends>QToolButton</extends>
+   <header>qgscolorbutton.h</header>
+  </customwidget>
   <customwidget>
    <class>QgsFileWidget</class>
    <extends>QWidget</extends>
