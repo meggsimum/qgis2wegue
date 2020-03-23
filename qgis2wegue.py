@@ -202,11 +202,12 @@ class qgis2wegue:
 
         # See if OK was pressed
         if result:
-            # access file path input widget
-            q2w_file_widget = self.dlg.q2w_file_widget
 
-            # get the path
-            user_input = q2w_file_widget.filePath()
+            # optional properties
+            wc.title = self.dlg.q2w_title_widget.text()
+            wc.footerTextLeft = self.dlg.q2w_footer_left_widget.text()
+            wc.footerTextRight = self.dlg.q2w_footer_right_widget.text()
 
-            # write Wegue config to path
+            # path for config
+            user_input = self.dlg.q2w_file_widget.filePath()
             wc.to_file(user_input)
