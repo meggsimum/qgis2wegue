@@ -54,7 +54,11 @@ def create_wegue_conf_from_qgis(canvas):
 
             layer_props = parse_qs(source)
             url = layer_props['url'][0]
-            attributions = layer_props['referer'][0]
+
+            # in case no attribution is available
+            attributions = ""  
+            if 'referer' in layer_props:
+                attributions = layer_props['referer'][0]
 
             wc.add_xyz_layer(name, url, attributions=attributions)
 
