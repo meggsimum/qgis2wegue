@@ -11,20 +11,22 @@ This plugin is still work in progress. Supported formats so far:
 - `KML`
 - `GeoJSON`
 
-## Installation
+## Installation for Developers
 
-On Ubuntu/Debian:
+The installation works basically same for Windows, Linux and Mac:
 
-```shell
-# enter QGIS plugin directory
-cd ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins
-# download plugin
-git clone https://github.com/meggsimum/qgis2wegue
-```
+1. Enter your QGIS plugin directory with `cd PATH/TO/YOUR/QGIS/PLUGIN/DIRECTORY` The path depends on your installation. Typical locations are:
+    - Ubuntu/Debian: `~/.local/share/QGIS/QGIS3/profiles/default/python/plugins`
+    - Windows (standalone installation): `C:\Users\USER\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins`
+    - Windows (Network Installation): `C:\OSGeo4W64\apps\qgis\python\plugins`
 
-- restart QGIS
-- open the plugin manager and activate the plugin
-- the plugin should show up in the toolbar
+2. Download QGIS2Wegue: `git clone https://github.com/meggsimum/qgis2wegue`
+
+3. Restart QGIS
+
+4. Open the plugin manager and activate the plugin - the plugin should show up in the toolbar
+
+5. Update the plugin with `git pull https://github.com/meggsimum/qgis2wegue` and restart QGIS
 
 
 ## Usage
