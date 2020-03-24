@@ -15,10 +15,10 @@ This plugin is still work in progress. Supported formats so far:
 
 The installation works basically same for Windows, Linux and Mac:
 
-1. Enter your QGIS plugin directory with `cd PATH/TO/YOUR/QGIS/PLUGIN/DIRECTORY` The path depends on your installation. Typical locations are:
-    - Ubuntu/Debian: `~/.local/share/QGIS/QGIS3/profiles/default/python/plugins`
+1. Enter your QGIS plugin directory with `cd PATH/TO/YOUR/QGIS/PLUGIN/DIRECTORY` The path depends on your QGIS installation. Typical locations are:
     - Windows (standalone installation): `C:\Users\USER\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins`
     - Windows (Network Installation): `C:\OSGeo4W64\apps\qgis\python\plugins`
+    - Ubuntu/Debian: `~/.local/share/QGIS/QGIS3/profiles/default/python/plugins`
 
 2. Download QGIS2Wegue: `git clone https://github.com/meggsimum/qgis2wegue`
 
@@ -26,7 +26,7 @@ The installation works basically same for Windows, Linux and Mac:
 
 4. Open the plugin manager and activate the plugin - the plugin should show up in the toolbar
 
-5. Update the plugin with `git pull https://github.com/meggsimum/qgis2wegue` and restart QGIS
+Update the plugin with `git pull https://github.com/meggsimum/qgis2wegue` and restart QGIS
 
 
 ## Usage

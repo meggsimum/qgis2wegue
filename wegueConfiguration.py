@@ -1,5 +1,5 @@
 import json
-from unidecode import unidecode
+import uuid
 
 DEFAULT_POINT_STYLE = {
     "radius": 4,
@@ -289,14 +289,12 @@ class WegueConfiguration:
 
         lid = name.strip().lower()
         
-        # special for German umlauts, because not handled in unidecode package
-
+        # replace some special characters
         lid = lid.replace('ä','ae')
         lid = lid.replace('ö','oe')
         lid = lid.replace('ü','üe')
-
-        # replace special characters with ASCII equivalent 
-        lid = unidecode(lid)
+        lid = lid.replace('ß','ss')
+        lid = lid.replace('é','e')
 
         # replace whitespace with underscore
         lid = lid.replace(" ", "_")
@@ -309,4 +307,11 @@ class WegueConfiguration:
         while "__" in lid:
             lid = lid.replace("__","_")
         
+        # only keep ascii characters 
+        lid = lid.encode('utf-8').decode('ascii', 'ignore')
+
+        # in case all characters have been removed
+        if lid == '':
+            lid = uuid.uuid1()
+
         return lid
