@@ -231,10 +231,9 @@ class qgis2wegue:
 
             # color
             color_rgb = self.dlg.q2w_color_widget.color().getRgb()
-            r, g, b, alpha = color_rgb
-            # inspired by https://stackoverflow.com/a/3380754/12231048
-            color_hex = "#{0:02x}{1:02x}{2:02x}".format(r, g, b)
-            wc.baseColor = color_hex
+            # drop alpha value
+            color_rgb = color_rgb[0:3]
+            wc.baseColor = 'rgb' + str(color_rgb)
 
             # path for config
             user_input = self.dlg.q2w_file_widget.filePath()
