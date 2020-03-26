@@ -90,10 +90,8 @@ def center2webmercator(center, qgis_instance):
 
     crs_source = qgis_instance.crs()
 
-    # TODO apparently QgsCoordinateReferenceSystem is deprecated
-
     # define WebMercator(EPSG:3857)
-    crs_destination = QgsCoordinateReferenceSystem(3857)
+    crs_destination = QgsCoordinateReferenceSystem('EPSG:3857')
 
     # transformation object
     xform = QgsCoordinateTransform(crs_source,
@@ -101,8 +99,7 @@ def center2webmercator(center, qgis_instance):
                                    qgis_instance)
 
     # forward transformation: src -> dest
-    center_3857 = xform.transform(center)
-    return center_3857
+    return  xform.transform(center)
 
 
 def scale2zoom(scale):
@@ -230,9 +227,6 @@ def get_wfs_properties(source):
         # remove single quote
         v = v.replace("'", "")
 
-        # handle keys that appear twice
-        if k in props:
-            k = k + '_2'
-
+        # handle keys that appear twQgsCoordinateTransform
         props[k] = v
     return props
