@@ -226,6 +226,9 @@ class qgis2wegue:
             if self.dlg.q2w_max_extent.isChecked():
                 wc.add_button_zoom_to_extent()
 
+            if self.dlg.q2w_geocoder.isChecked():
+                wc.add_geocoder()
+
             # color
             color_rgb = self.dlg.q2w_color_widget.color().getRgb()
             r, g, b, alpha = color_rgb

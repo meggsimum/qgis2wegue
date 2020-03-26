@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>748</width>
-    <height>503</height>
+    <width>745</width>
+    <height>522</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>10</x>
      <y>10</y>
      <width>721</width>
-     <height>476</height>
+     <height>505</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -136,6 +136,16 @@ p, li { white-space: pre-wrap; }
        <widget class="QCheckBox" name="q2w_layer_list">
         <property name="text">
          <string>Layer List</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="q2w_geocoder">
+        <property name="text">
+         <string>Geocoder</string>
         </property>
         <property name="checked">
          <bool>true</bool>

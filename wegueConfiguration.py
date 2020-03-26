@@ -325,3 +325,20 @@ class WegueConfiguration:
             "target": "toolbar",
             "darkLayout": True
         }
+
+    def add_geocoder(self):
+        self.modules['wgu-geocoder'] = {
+            "target": "toolbar",
+            "darkLayout": True,
+            "minChars": 2,
+            "queryDelay": 200,
+            "selectZoom": 16,
+            "debug": False,
+            "placeHolder": "Search address",
+            "provider": "osm",
+            "providerOptions": {
+                "lang": "en-US",
+                "countrycodes": "",
+                "limit": 6
+            }
+        }
