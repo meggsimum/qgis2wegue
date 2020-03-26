@@ -25,40 +25,7 @@ class WegueConfiguration:
         self.mapZoom = 2
         self.mapCenter = (0, 0)
         self.mapLayers = []
-        self.modules = {"wgu-layerlist":
-                        {
-                            "target": "menu",
-                            "win": True,
-                            "draggable": False
-                        },
-                        "wgu-measuretool": {
-                            "target": "menu",
-                            "win": True,
-                            "draggable": False,
-                            "strokeColor": "#c62828",
-                            "fillColor": "rgba(198,40,40,0.2)",
-                            "sketchStrokeColor": "rgba(198,40,40,0.8)",
-                            "sketchFillColor": "rgba(198,40,40,0.1)",
-                            "sketchVertexStrokeColor": "#c62828",
-                            "sketchVertexFillColor": "rgba(198,40,40,0.2)"
-                        },
-                        "wgu-infoclick": {
-                            "target": "menu",
-                            "win": True,
-                            "draggable": False,
-                            "initPos": {
-                                "left": 8,
-                                "top": 74
-                            }
-                        },
-                        "wgu-zoomtomaxextent": {
-                            "target": "toolbar",
-                            "darkLayout": True
-                        },
-                        "wgu-helpwin": {
-                            "target": "toolbar",
-                            "darkLayout": True
-                        }}
+        self.modules = {}
 
     def as_dict(self):
         """
@@ -288,13 +255,13 @@ class WegueConfiguration:
         """
 
         lid = name.strip().lower()
-        
+
         # replace some special characters
-        lid = lid.replace('ä','ae')
-        lid = lid.replace('ö','oe')
-        lid = lid.replace('ü','üe')
-        lid = lid.replace('ß','ss')
-        lid = lid.replace('é','e')
+        lid = lid.replace('ä', 'ae')
+        lid = lid.replace('ö', 'oe')
+        lid = lid.replace('ü', 'üe')
+        lid = lid.replace('ß', 'ss')
+        lid = lid.replace('é', 'e')
 
         # replace whitespace with underscore
         lid = lid.replace(" ", "_")
@@ -305,9 +272,9 @@ class WegueConfiguration:
 
         # only one underscore in a row
         while "__" in lid:
-            lid = lid.replace("__","_")
-        
-        # only keep ascii characters 
+            lid = lid.replace("__", "_")
+
+        # only keep ascii characters
         lid = lid.encode('utf-8').decode('ascii', 'ignore')
 
         # in case all characters have been removed
@@ -315,3 +282,46 @@ class WegueConfiguration:
             lid = uuid.uuid1()
 
         return lid
+
+    def add_layer_list(self):
+        self.modules['wgu-layerlist'] = {
+            "target": "menu",
+            "win": True,
+            "draggable": False
+        }
+
+    def add_measuretool(self):
+        self.modules['wgu-measuretool'] = {
+            "target": "menu",
+            "win": True,
+            "draggable": False,
+            "strokeColor": "#c62828",
+            "fillColor": "rgba(198,40,40,0.2)",
+            "sketchStrokeColor": "rgba(198,40,40,0.8)",
+            "sketchFillColor": "rgba(198,40,40,0.1)",
+            "sketchVertexStrokeColor": "#c62828",
+            "sketchVertexFillColor": "rgba(198,40,40,0.2)"
+        }
+
+    def add_infoclick(self):
+        self.modules['wgu-infoclick'] = {
+            "target": "menu",
+            "win": True,
+            "draggable": False,
+            "initPos": {
+                "left": 8,
+                "top": 74
+            }
+        }
+
+    def add_button_zoom_to_extent(self):
+        self.modules['wgu-zoomtomaxextent'] = {
+            "target": "toolbar",
+            "darkLayout": True
+        }
+
+    def add_help_window(self):
+        self.modules['wgu-helpwin'] = {
+            "target": "toolbar",
+            "darkLayout": True
+        }

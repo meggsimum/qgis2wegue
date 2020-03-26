@@ -208,6 +208,24 @@ class qgis2wegue:
             wc.footerTextLeft = self.dlg.q2w_footer_left_widget.text()
             wc.footerTextRight = self.dlg.q2w_footer_right_widget.text()
 
+            # add checkbox properties
+            wc.showCopyrightYear = self.dlg.q2w_copyright_year.isChecked()
+
+            if self.dlg.q2w_layer_list.isChecked():
+                wc.add_layer_list()
+
+            if self.dlg.q2w_info_click.isChecked():
+                wc.add_infoclick()
+
+            if self.dlg.q2w_help_window.isChecked():
+                wc.add_help_window()
+
+            if self.dlg.q2w_measure_tool.isChecked():
+                wc.add_measuretool()
+
+            if self.dlg.q2w_max_extent.isChecked():
+                wc.add_button_zoom_to_extent()
+
             # color
             color_rgb = self.dlg.q2w_color_widget.color().getRgb()
             r, g, b, alpha = color_rgb

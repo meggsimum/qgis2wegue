@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>742</width>
-    <height>398</height>
+    <width>748</width>
+    <height>503</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
+     <y>10</y>
      <width>721</width>
-     <height>364</height>
+     <height>476</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -72,6 +72,77 @@ p, li { white-space: pre-wrap; }
     </item>
     <item>
      <widget class="QLineEdit" name="q2w_footer_right_widget"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Map Options:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="q2w_info_click">
+        <property name="text">
+         <string>Feature Info</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="q2w_copyright_year">
+        <property name="text">
+         <string>Copyright Year</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="q2w_help_window">
+        <property name="text">
+         <string>Help Window</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="q2w_measure_tool">
+        <property name="text">
+         <string>Measure Tool</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="q2w_max_extent">
+        <property name="text">
+         <string>Zoom To Maximum Extent</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="q2w_layer_list">
+        <property name="text">
+         <string>Layer List</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <widget class="QLabel" name="label_4">
