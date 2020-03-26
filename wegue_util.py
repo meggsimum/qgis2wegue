@@ -199,11 +199,11 @@ def get_wms_getmap_url(wmsLayer):
         r'GetMapUrl<\/td><td>(.*)<\/td><\/tr><tr><td>GetFeatureInfoUrl',
         htmlMetadata)
 
-    layersGroup = match.groups(0)
-    wms_getmap_url = ''.join(layersGroup)
+    if match:
+        layersGroup = match.groups(0)
+        wms_getmap_url = ''.join(layersGroup)
 
-    # use source URL as fallback
-    if wms_getmap_url is None:
+    else:
         wms_getmap_url = re.search(r"url=(.*?)(?:&|$)",
                                    wmsLayer.source()).groups(0)[0]
 
