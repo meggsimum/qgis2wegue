@@ -48,7 +48,7 @@ PY_FILES = \
 
 UI_FILES = qgis2wegue_dialog_base.ui
 
-EXTRAS = metadata.txt icon.png
+EXTRAS = metadata.txt logo/logo.png
 
 EXTRA_DIRS =
 

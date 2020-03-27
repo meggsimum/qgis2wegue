@@ -1,3 +1,6 @@
+
+![logo](logo/logo.png)
+
 # QGIS2Wegue 
 
 A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configurations based on a QGIS project.

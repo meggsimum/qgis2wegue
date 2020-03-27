@@ -161,7 +161,7 @@ class qgis2wegue:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/qgis2wegue/icon.png'
+        icon_path = ':/plugins/qgis2wegue/logo/logo.png'
         self.add_action(
             icon_path,
             text=self.tr(u'Create a Wegue Configuration'),

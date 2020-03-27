@@ -31,7 +31,7 @@ class qgis2wegueDialogTest(unittest.TestCase):
 
     def test_icon_png(self):
         """Test we can click OK."""
-        path = ':/plugins/qgis2wegue/icon.png'
+        path = ':/plugins/qgis2wegue/logo/logo.png'
         icon = QIcon(path)
         self.assertFalse(icon.isNull())
 

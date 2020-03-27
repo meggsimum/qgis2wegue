@@ -27,7 +27,7 @@ tags=python, wegue, openlayers, web, vue.js, export, wms, wfs, geojson
 
 homepage=https://github.com/meggsimum/qgis2wegue
 category=Plugins
-icon=icon.png
+icon=logo/logo.png
 # experimental flag
 experimental=true
 
