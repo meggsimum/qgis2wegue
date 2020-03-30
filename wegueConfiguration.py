@@ -1,13 +1,6 @@
 import json
 import uuid
 
-DEFAULT_POINT_STYLE = {
-    "radius": 4,
-    "strokeColor": "rgb(207, 16, 32)",
-    "strokeWidth": 1,
-    "fillColor": "rgba(207, 16, 32, 0.6)"
-}
-
 
 class WegueConfiguration:
     """
@@ -127,20 +120,21 @@ class WegueConfiguration:
                          formatConfig="",
                          attributions="",
                          hoverable=False,
-                         hoverAttribute=""):
+                         hoverAttribute="",
+                         geometryTypeName=""):
         """
         :param format: allowed values: "MVT", "GeoJSON", "TopoJSON", "KML"
         :param lid: layer id
         :param style: OpenLayers style
+        :param geometryTypeName: if style is empty and geometryType specific default style will be applied. Allowed values "Point", "LineString", "Polygon"
         :return:
         """
 
         if not lid:
             lid = self._create_layer_id(name)
 
-        # TODO: add different default styles for Line and Polygon
-        if not style:
-            style = DEFAULT_POINT_STYLE
+        if not style and geometryTypeName:
+            style = self._assign_default_style(geometryTypeName)
 
         vector_conf = {
             "type": "VECTOR",
@@ -161,7 +155,29 @@ class WegueConfiguration:
 
         self.mapLayers.append(vector_conf)
 
-    # TODO: make parameters in same order as for other functions
+    def _assign_default_style(self, geometryType):
+        style = ""
+        if geometryType == 'Point':
+            style = {
+                "radius": 4,
+                "strokeColor": "rgb(207, 16, 32)",
+                "strokeWidth": 1,
+                "fillColor": "rgba(207, 16, 32, 0.6)"
+            }
+        elif geometryType == 'LineString':
+            style = {
+                "strokeColor": "blue",
+                "strokeWidth": 2
+            }
+        elif geometryType == 'Polygon':
+            style = {
+                "strokeColor": "gray",
+                "strokeWidth": 1,
+                "fillColor": "rgba(20,20,20,0.1)"
+            }
+        return style
+
+
     def add_wms_layer(self,
                       name,
                       layers,
@@ -220,11 +236,19 @@ class WegueConfiguration:
                       style="",
                       attributions="",
                       loadOnlyVisible="",
-                      maxFeatures=""
+                      maxFeatures="",
+                      geometryTypeName=""
                       ):
-
+        """
+        :param style: OpenLayers style
+        :param geometryTypeName: if style is empty and geometryType specific default style will be applied. Allowed values "Point", "LineString", "Polygon"
+        :return:
+        """
         if not lid:
             lid = self._create_layer_id(name)
+
+        if not style and geometryTypeName:
+            style = self._assign_default_style(geometryTypeName)    
 
         wfs_conf = {
             "type": "WFS",

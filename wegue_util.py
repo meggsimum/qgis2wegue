@@ -1,7 +1,7 @@
 import re
 from urllib.parse import parse_qs
 from qgis.core import QgsProject, QgsCoordinateTransform
-from qgis.core import QgsCoordinateReferenceSystem
+from qgis.core import QgsCoordinateReferenceSystem, QgsWkbTypes
 from .wegueConfiguration import WegueConfiguration
 
 
@@ -40,9 +40,12 @@ def create_wegue_conf_from_qgis(canvas):
         if wegue_layer_type in ['GeoJSON', 'KML']:
             url = source.split('|')[0]
 
+            geometry_type_name = get_geometry_type_name(layer)
+
             wc.add_vector_layer(name=name,
                                 format=wegue_layer_type,
-                                url=url)
+                                url=url,
+                                geometryTypeName=geometry_type_name)
 
         elif wegue_layer_type == 'WMS':
             layers = re.search(r"layers=(.*?)(?:&|$)", source).groups(0)[0]
@@ -69,13 +72,12 @@ def create_wegue_conf_from_qgis(canvas):
             typename = props['typename']
             url = props['url']
 
-            # TODO: add those parameters
-            extent = layer.extent()
-            crs = layer.crs()
+            geometry_type_name = get_geometry_type_name(layer)
 
             wc.add_wfs_layer(name=name,
                              url=url,
-                             typeName=typename)
+                             typeName=typename,
+                             geometryTypeName=geometry_type_name)
 
     return wc
 
@@ -99,7 +101,7 @@ def center2webmercator(center, qgis_instance):
                                    qgis_instance)
 
     # forward transformation: src -> dest
-    return  xform.transform(center)
+    return xform.transform(center)
 
 
 def scale2zoom(scale):
@@ -211,7 +213,6 @@ def get_wfs_properties(source):
     """
     Extracts the WFS properties from the layer source
     """
-    # TODO: check if there is a more elegant solution
 
     # manually converting source into dict
     source = source.strip()
@@ -230,3 +231,22 @@ def get_wfs_properties(source):
         # handle keys that appear twQgsCoordinateTransform
         props[k] = v
     return props
+
+
+def get_geometry_type_name(layer):
+    """
+    Translates QGIS Geometry Type codes into human-readable 
+    geometry types: "Point", "LineString", "Polygon"
+    """
+    geom_type = layer.geometryType()
+
+    result = ""
+
+    if geom_type == 0:
+        result = "Point"
+    elif geom_type == 1:
+        result = "LineString"
+    elif geom_type == 2:
+        result = "Polygon"
+
+    return result
