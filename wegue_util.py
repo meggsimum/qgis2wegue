@@ -1,4 +1,5 @@
 import re
+from owslib.wms import WebMapService
 from .wegueConfUtils import (create_vector_layer,
                              create_wfs,
                              create_wms,
@@ -58,28 +59,6 @@ def scale2zoom(scale):
 
     # query respective zoom level
     return scale_dict[closest_scale]
-
-
-def get_wms_getmap_url(wmsLayer):
-    """Detects the Get-Map URL for a QGIS WMS layer"""
-
-    wms_getmap_url = None
-
-    # derive WMS GetMap URL from layer metdata
-    htmlMetadata = wmsLayer.htmlMetadata()
-    match = re.search(
-        r"GetMapUrl<\/td><td>(.*)<\/td><\/tr><tr><td>GetFeatureInfoUrl",
-        htmlMetadata)
-
-    if match:
-        layersGroup = match.groups(0)
-        wms_getmap_url = "".join(layersGroup)
-
-    else:
-        wms_getmap_url = re.search(r"url=(.*?)(?:&|$)",
-                                   wmsLayer.source()).groups(0)[0]
-
-    return wms_getmap_url
 
 
 def get_wfs_properties(source):
@@ -158,16 +137,17 @@ def extract_wegue_layer_config(layer):
 
         # WMS
         else:
-            layers_wms_property = re.search(
-                r"layers=(.*?)(?:&|$)",
-                source).groups(0)[0]
 
-            url = get_wms_getmap_url(layer)
+            d = parse_qs(source)
 
-            return create_wms(
-                name,
-                url,
-                layers_wms_property)
+            url_get_capabilities = d['url'][0]
+            layers_wms_property = d['layers'][0]
+
+            # request getMap URL via OWSLib
+            wms = WebMapService(url_get_capabilities)
+            url_get_map = wms.getOperationByName('GetMap').methods[0]['url']
+
+            return create_wms(name, url_get_map, layers_wms_property)
 
     # KML or GeoJSON
     elif providerType == "ogr":

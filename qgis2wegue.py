@@ -37,11 +37,7 @@ from .wegueConf import WegueConfiguration
 
 from .wegue_util import (center2webmercator,
                          scale2zoom,
-                         get_wms_getmap_url,
-                         get_wfs_properties,
-                         get_geometry_type_name,
                          extract_wegue_layer_config)
-
 
 class qgis2wegue:
     """QGIS Plugin Implementation."""
