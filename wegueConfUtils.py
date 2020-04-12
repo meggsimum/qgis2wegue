@@ -26,7 +26,7 @@ def create_vector_layer(name, url, vector_format, **vector_props):
 
 def create_wfs(name, url, typename, **wfs_props):
 
-    wfs_props['typename'] = typename
+    wfs_props['typeName'] = typename
 
     return _make_layer_json("WFS", name, url, wfs_props)
 
