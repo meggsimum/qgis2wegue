@@ -29,7 +29,8 @@ from qgis.PyQt import QtWidgets
 from qgis.gui import QgsFileWidget
 
 
-# This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
+# This loads your .ui file so that PyQt can populate your plugin with the
+# elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'qgis2wegue_dialog_base.ui'))
 

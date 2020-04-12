@@ -21,7 +21,11 @@
  *                                                                         *
  ***************************************************************************/
 """
+import re
+import os.path
+
 from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
+from qgis.core import QgsProject
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 
@@ -29,9 +33,14 @@ from qgis.PyQt.QtWidgets import QAction
 from .resources import *
 # Import the code for the dialog
 from .qgis2wegue_dialog import qgis2wegueDialog
-import os.path
+from .wegueConf import WegueConfiguration
 
-from .wegue_util import create_wegue_conf_from_qgis
+from .wegue_util import (center2webmercator,
+                         scale2zoom,
+                         get_wms_getmap_url,
+                         get_wfs_properties,
+                         get_geometry_type_name,
+                         extract_wegue_layer_config)
 
 
 class qgis2wegue:
@@ -50,11 +59,11 @@ class qgis2wegue:
         # initialize plugin directory
         self.plugin_dir = os.path.dirname(__file__)
         # initialize locale
-        locale = QSettings().value('locale/userLocale')[0:2]
+        locale = QSettings().value("locale/userLocale")[0:2]
         locale_path = os.path.join(
             self.plugin_dir,
-            'i18n',
-            'qgis2wegue_{}.qm'.format(locale))
+            "i18n",
+            "qgis2wegue_{}.qm".format(locale))
 
         if os.path.exists(locale_path):
             self.translator = QTranslator()
@@ -63,7 +72,7 @@ class qgis2wegue:
 
         # Declare instance attributes
         self.actions = []
-        self.menu = self.tr(u'&QGIS2Wegue')
+        self.menu = self.tr(u"&QGIS2Wegue")
 
         # Check if plugin was started the first time in current QGIS session
         # Must be set in initGui() to survive plugin reloads
@@ -82,7 +91,7 @@ class qgis2wegue:
         :rtype: QString
         """
         # noinspection PyTypeChecker,PyArgumentList,PyCallByClass
-        return QCoreApplication.translate('qgis2wegue', message)
+        return QCoreApplication.translate("qgis2wegue", message)
 
     def add_action(
             self,
@@ -161,10 +170,10 @@ class qgis2wegue:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/qgis2wegue/logo/logo.png'
+        icon_path = ":/plugins/qgis2wegue/logo/logo.png"
         self.add_action(
             icon_path,
-            text=self.tr(u'Create a Wegue Configuration'),
+            text=self.tr(u"Create a Wegue Configuration"),
             callback=self.run,
             parent=self.iface.mainWindow())
 
@@ -175,7 +184,7 @@ class qgis2wegue:
         """Removes the plugin menu item and icon from QGIS GUI."""
         for action in self.actions:
             self.iface.removePluginMenu(
-                self.tr(u'&QGIS2Wegue'),
+                self.tr(u"&QGIS2Wegue"),
                 action)
             self.iface.removeToolBarIcon(action)
 
@@ -192,49 +201,78 @@ class qgis2wegue:
         # show the dialog
         self.dlg.show()
 
-        # get properties from QGIS project
-        canvas = self.iface.mapCanvas()
-
-        wc = create_wegue_conf_from_qgis(canvas)
-
         # Run the dialog event loop
         result = self.dlg.exec_()
 
         # See if OK was pressed
         if result:
+            # reset Wegue conf
+            self.wegue_conf = WegueConfiguration()
+            self.store_wegue_conf_to_file()
 
-            # optional properties
-            wc.title = self.dlg.q2w_title_widget.text()
-            wc.footerTextLeft = self.dlg.q2w_footer_left_widget.text()
-            wc.footerTextRight = self.dlg.q2w_footer_right_widget.text()
+    def store_wegue_conf_to_file(self):
+        """
+        Collects all paramters from QGIS and the plugin form
+        and creates the Wegue configuration
+        """
 
-            # add checkbox properties
-            wc.showCopyrightYear = self.dlg.q2w_copyright_year.isChecked()
+        canvas = self.iface.mapCanvas()
+        qgis_instance = QgsProject.instance()
 
-            if self.dlg.q2w_layer_list.isChecked():
-                wc.add_layer_list()
+        scale = canvas.scale()
+        center = canvas.center()
 
-            if self.dlg.q2w_info_click.isChecked():
-                wc.add_infoclick()
+        center_3857 = center2webmercator(center, qgis_instance)
 
-            if self.dlg.q2w_help_window.isChecked():
-                wc.add_help_window()
+        zoom_level = scale2zoom(scale)
 
-            if self.dlg.q2w_measure_tool.isChecked():
-                wc.add_measuretool()
+        # add configuration from project
+        self.wegue_conf.mapZoom = zoom_level
+        self.wegue_conf.mapCenter = (center_3857.x(), center_3857.y())
 
-            if self.dlg.q2w_max_extent.isChecked():
-                wc.add_button_zoom_to_extent()
+        # get information from all layers
+        # loop through checked layers
+        root = qgis_instance.layerTreeRoot()
+        for layer in root.checkedLayers():
 
-            if self.dlg.q2w_geocoder.isChecked():
-                wc.add_geocoder()
+            result_layer = extract_wegue_layer_config(layer)
+            if result_layer:
+                self.wegue_conf.mapLayers.append(result_layer)
 
-            # color
-            color_rgb = self.dlg.q2w_color_widget.color().getRgb()
-            # drop alpha value
-            color_rgb = color_rgb[0:3]
-            wc.baseColor = 'rgb' + str(color_rgb)
+        # optional properties
+        self.wegue_conf.title = self.dlg.q2w_title_widget.text()
+        self.wegue_conf.footerTextLeft = self.dlg.q2w_footer_left_widget.text()
+        self.wegue_conf.footerTextRight = \
+            self.dlg.q2w_footer_right_widget.text()
 
-            # path for config
-            user_input = self.dlg.q2w_file_widget.filePath()
-            wc.to_file(user_input)
+        # add checkbox properties
+        self.wegue_conf.showCopyrightYear = \
+            self.dlg.q2w_copyright_year.isChecked()
+
+        if self.dlg.q2w_layer_list.isChecked():
+            self.wegue_conf.add_layer_list()
+
+        if self.dlg.q2w_info_click.isChecked():
+            self.wegue_conf.add_infoclick()
+
+        if self.dlg.q2w_help_window.isChecked():
+            self.wegue_conf.add_help_window()
+
+        if self.dlg.q2w_measure_tool.isChecked():
+            self.wegue_conf.add_measuretool()
+
+        if self.dlg.q2w_max_extent.isChecked():
+            self.wegue_conf.add_button_zoom_to_extent()
+
+        if self.dlg.q2w_geocoder.isChecked():
+            self.wegue_conf.add_geocoder()
+
+        # color
+        color_rgb = self.dlg.q2w_color_widget.color().getRgb()
+        # drop alpha value
+        color_rgb = color_rgb[0:3]
+        self.wegue_conf.baseColor = "rgb" + str(color_rgb)
+
+        # path for config
+        user_input = self.dlg.q2w_file_widget.filePath()
+        self.wegue_conf.to_file(user_input)
