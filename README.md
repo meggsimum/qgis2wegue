@@ -31,6 +31,21 @@ The installation works basically same for Windows, Linux and Mac:
 
 Update the plugin with `git pull https://github.com/meggsimum/qgis2wegue` and restart QGIS
 
+## Development Snippets
+
+Check code quality with and errors:
+
+```shell
+pylint --reports=n --rcfile=pylintrc .
+pycodestyle --repeat --ignore=E203,E121,E122,E123,E124,E125,E126,E127,E128 --exclude=resources.py .
+```
+
+Compile resources e.g. when logo has changed:
+
+```shell
+pyrcc5 -o resources.py resources.qrc
+```
+
 
 ## Usage
 
