@@ -13,7 +13,3 @@ class qgis2wegueDialog(QtWidgets.QDialog, FORM_CLASS):
         """Constructor."""
         super(qgis2wegueDialog, self).__init__(parent)
         self.setupUi(self)
-
-        # enable file widget to create new files
-        q2w_file_widget = self.q2w_file_widget
-        q2w_file_widget.setStorageMode(QgsFileWidget.SaveFile)

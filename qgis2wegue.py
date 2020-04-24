@@ -16,17 +16,12 @@ from .wegue_util import (center2webmercator,
                          scale2zoom,
                          extract_wegue_layer_config)
 
+
 class qgis2wegue:
     """QGIS Plugin Implementation."""
 
     def __init__(self, iface):
-        """Constructor.
 
-        :param iface: An interface instance that will be passed to this class
-            which provides the hook by which you can manipulate the QGIS
-            application at run time.
-        :type iface: QgsInterface
-        """
         # Save reference to the QGIS interface
         self.iface = iface
         # initialize plugin directory
@@ -53,16 +48,7 @@ class qgis2wegue:
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
-        """Get the translation for a string using Qt translation API.
 
-        We implement this ourselves since we do not inherit QObject.
-
-        :param message: String for translation.
-        :type message: str, QString
-
-        :returns: Translated version of message.
-        :rtype: QString
-        """
         # noinspection PyTypeChecker,PyArgumentList,PyCallByClass
         return QCoreApplication.translate("qgis2wegue", message)
 
@@ -77,44 +63,6 @@ class qgis2wegue:
             status_tip=None,
             whats_this=None,
             parent=None):
-        """Add a toolbar icon to the toolbar.
-
-        :param icon_path: Path to the icon for this action. Can be a resource
-            path (e.g. ':/plugins/foo/bar.png') or a normal file system path.
-        :type icon_path: str
-
-        :param text: Text that should be shown in menu items for this action.
-        :type text: str
-
-        :param callback: Function to be called when the action is triggered.
-        :type callback: function
-
-        :param enabled_flag: A flag indicating if the action should be enabled
-            by default. Defaults to True.
-        :type enabled_flag: bool
-
-        :param add_to_menu: Flag indicating whether the action should also
-            be added to the menu. Defaults to True.
-        :type add_to_menu: bool
-
-        :param add_to_toolbar: Flag indicating whether the action should also
-            be added to the toolbar. Defaults to True.
-        :type add_to_toolbar: bool
-
-        :param status_tip: Optional text to show in a popup when mouse pointer
-            hovers over the action.
-        :type status_tip: str
-
-        :param parent: Parent widget for the new action. Defaults None.
-        :type parent: QWidget
-
-        :param whats_this: Optional text to show in the status bar when the
-            mouse pointer hovers over the action.
-
-        :returns: The action that was created. Note that the action is also
-            added to self.actions list.
-        :rtype: QAction
-        """
 
         icon = QIcon(icon_path)
         action = QAction(icon, text, parent)
@@ -164,24 +112,40 @@ class qgis2wegue:
     def run(self):
         """Run method that performs all the real work"""
 
-        # Create the dialog with elements (after translation) and keep reference
-        # Only create GUI ONCE in callback, so that it will only load when the
-        # plugin is started
         if self.first_start:
             self.first_start = False
+            self.dlg = qgis2wegueDialog(parent=self.iface.mainWindow())
             self.dlg = qgis2wegueDialog()
+            self.dlg.q2w_file_widget.fileChanged.connect(
+                self.check_path_and_handle_submit_button)
+            self.dlg.finished.connect(self.final_task)
 
-        # show the dialog
-        self.dlg.show()
+        self.dlg.open()
 
-        # Run the dialog event loop
-        result = self.dlg.exec_()
+    def final_task(self, result):
 
-        # See if OK was pressed
         if result:
             # reset Wegue conf
             self.wegue_conf = WegueConfiguration()
             self.store_wegue_conf_to_file()
+
+    def check_path_and_handle_submit_button(self, path):
+        """Checks if output path is valid"""
+
+        base_dir, file = os.path.split(path)
+
+        dir_exists = os.path.exists(base_dir)
+
+        # wegue config files must match this pattern
+        file_is_valid = (
+            file == 'app-conf.json') | (file.startswith('app-conf-') & file.endswith('.json'))
+
+        enabled = False
+        if (file != "") & dir_exists & file_is_valid:
+            # output path valid
+            enabled = True
+
+        self.dlg.button_box.setEnabled(enabled)
 
     def store_wegue_conf_to_file(self):
         """
