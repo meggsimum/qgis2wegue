@@ -180,8 +180,30 @@ def extract_wegue_layer_config(layer):
 
         geometry_type_name = get_geometry_type_name(layer)
 
+        source_extent = layer.sourceExtent()
+
+        minx = source_extent.xMinimum()
+        miny = source_extent.yMinimum()
+        maxx = source_extent.xMaximum()
+        maxy = source_extent.yMaximum()
+
+        extent = [minx, miny, maxx, maxy]
+
+        source_crs = layer.sourceCrs()
+        projection = source_crs.authid()
+
+        # ##################################################
+        # import pdb                                       #
+        # from qgis.PyQt.QtCore import pyqtRemoveInputHook
+        # pyqtRemoveInputHook()                            #
+        # pdb.set_trace()                                  #
+        # ##################################################
+
         return create_wfs(
-            name, url, typename, geometryTypeName=geometry_type_name)
+            name, url, typename,
+            geometryTypeName=geometry_type_name,
+            extent=extent,
+            projection=projection)
 
     # Provider Type not supported
     else:
