@@ -46,3 +46,23 @@ pyrcc5 -o resources.py resources.qrc
 ```
 
 
+Copy relevant files for a release:
+
+
+```
+# edit this path
+TARGET_DIR=your/custom/path
+
+TMP_PLUGIN_DIR=${TARGET_DIR}/qgis2wegue
+
+rm -rf ${TMP_PLUGIN_DIR}
+mkdir ${TMP_PLUGIN_DIR}
+cp -r \
+  *.py \
+  *ui \
+  logo \
+  README.md \
+  resources.qrc \
+  metadata.txt \
+  ${TMP_PLUGIN_DIR}
+```
