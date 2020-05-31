@@ -180,8 +180,18 @@ def extract_wegue_layer_config(layer):
 
         geometry_type_name = get_geometry_type_name(layer)
 
+        # Extent
+        source_extent = layer.sourceExtent()
+        minx = source_extent.xMinimum()
+        miny = source_extent.yMinimum()
+        maxx = source_extent.xMaximum()
+        maxy = source_extent.yMaximum()
+        extent = [minx, miny, maxx, maxy]
+
         return create_wfs(
-            name, url, typename, geometryTypeName=geometry_type_name)
+            name, url, typename,
+            geometryTypeName=geometry_type_name,
+            extent=extent)
 
     # Provider Type not supported
     else:
