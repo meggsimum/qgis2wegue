@@ -13,9 +13,13 @@ A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configura
 - Open the plugin, chose a filepath and click `OK`
 - Now you have a configuration file that works with Wegue 
 
-## Installation for Developers
+## Installation
 
-The installation works basically same for Windows, Linux and Mac:
+QGIS2Wegue is available in the offical [QGIS plugin repository](https://plugins.qgis.org/plugins/qgis2wegue/). Download via `Plugins` --> `Manage and Install Plugins ...`. Make sure to enable `experimental` plugins in the `Settings` menu.
+
+## Setup for Developers
+
+The setup works basically same for Windows, Linux and Mac:
 
 1. Enter your QGIS plugin directory with `cd PATH/TO/YOUR/QGIS/PLUGIN/DIRECTORY` The path depends on your QGIS installation. Typical locations are:
     - Windows (standalone installation): `C:\Users\USER\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins`
