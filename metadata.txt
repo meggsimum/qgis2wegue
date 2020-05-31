@@ -1,7 +1,7 @@
 [general]
 name=QGIS2Wegue
 qgisMinimumVersion=3.4
-version=0.1
+version=1.0.0-beta
 author=Jakob Miksch
 email=info@jakobmiksch.eu
 tracker=https://github.com/meggsimum/qgis2wegue/issues
@@ -12,4 +12,4 @@ category=Plugins
 icon=logo/logo.png
 description=Converts a QGIS project into a Wegue configuration file
 about=Wegue is application template for building webmapping projects. It only requires a single configuration file, which usually is created manually. This plugin takes the layers and the settings of a QGIS project and creates a basic configuration file which can be consumed by Wegue.
-
+experimental=True

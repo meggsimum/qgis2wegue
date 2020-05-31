@@ -5,14 +5,21 @@
 
 A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configurations based on a QGIS project.
 
-## Disclaimer
-
-This plugin is still work in progress. Supported formats so far:
+Supported formats are:
 - `WMS`
-- `WFS` (soon supported in Wegue)
 - `XYZ`
 - `KML`
 - `GeoJSON`
+- `WFS`
+
+## Usage
+
+- Add all your desired layers to QGIS
+- Open the plugin, chose a filepath and click `OK`
+- Now you have a configuration file that works with Wegue 
+
+![Screenshot Plugin](screenshot_gui.png)
+
 
 ## Installation for Developers
 
@@ -47,8 +54,3 @@ pyrcc5 -o resources.py resources.qrc
 ```
 
 
-## Usage
-
-- Add all your desired layers to QGIS
-- Open the plugin, chose a filepath and click `OK`
-- Now you have a configuration file that works with Wegue 
