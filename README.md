@@ -36,7 +36,7 @@ Update the plugin with `git pull https://github.com/meggsimum/qgis2wegue` and re
 
 ## Development Snippets
 
-Check code quality with and errors:
+Check code quality and errors:
 
 ```shell
 pylint --reports=n --rcfile=pylintrc .
@@ -49,11 +49,9 @@ Compile resources e.g. when logo has changed:
 pyrcc5 -o resources.py resources.qrc
 ```
 
-
 Copy relevant files for a release:
 
-
-```
+```shell
 # edit this path
 TARGET_DIR=your/custom/path
 
