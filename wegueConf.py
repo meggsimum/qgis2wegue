@@ -23,6 +23,25 @@ class WegueConfiguration:
         with open(path, "w") as path:
             json.dump(self.__dict__, path, indent=2, ensure_ascii=False)
 
+    def add_map_geodata_drag_drop(self):
+        self.mapGeodataDragDop = {
+            "formats": ["GeoJSON", "KML"],
+            "zoomToData": True,
+            "replaceData": True,
+            "displayInLayerList": True,
+            "layerName": "Uploaded Data"
+        }
+
+    def add_permalink(self):
+        self.permalink =  {
+            "location": "hash",
+            "layers": True,
+            "extent": False,
+            "projection": "EPSG:4326",
+            "paramPrefix": "",
+            "history": True
+        }        
+
     def add_layer_list(self):
         self.modules["wgu-layerlist"] = {
             "target": "menu",
@@ -82,3 +101,10 @@ class WegueConfiguration:
                 "limit": 6
             }
         }
+
+    def add_geolocator(self):
+        self.modules["wgu-geolocator"] = {
+            "target": "toolbar",
+            "darkLayout": True
+        }
+

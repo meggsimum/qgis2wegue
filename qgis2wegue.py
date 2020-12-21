@@ -203,6 +203,15 @@ class qgis2wegue:
 
         if self.dlg.q2w_geocoder.isChecked():
             self.wegue_conf.add_geocoder()
+        
+        if self.dlg.q2w_geodata_drag_drop.isChecked():
+            self.wegue_conf.add_map_geodata_drag_drop()
+        
+        if self.dlg.q2w_permalink.isChecked():
+            self.wegue_conf.add_permalink()
+        
+        if self.dlg.q2w_geolocator.isChecked():
+            self.wegue_conf.add_geolocator()
 
         # color
         color_rgb = self.dlg.q2w_color_widget.color().getRgb()
