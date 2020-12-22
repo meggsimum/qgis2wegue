@@ -15,7 +15,7 @@ A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configura
 
 ## Installation
 
-QGIS2Wegue is available in the offical [QGIS plugin repository](https://plugins.qgis.org/plugins/qgis2wegue/). Download via `Plugins` --> `Manage and Install Plugins ...`. Make sure to enable `experimental` plugins in the `Settings` menu.
+QGIS2Wegue is available in the offical [QGIS plugin repository](https://plugins.qgis.org/plugins/qgis2wegue/). Download via `Plugins` --> `Manage and Install Plugins ...`.
 
 ## Setup for Developers
 
