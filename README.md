@@ -1,4 +1,3 @@
-
 ![logo](logo/logo.png)
 
 # QGIS2Wegue 
@@ -34,6 +33,8 @@ The setup works basically same for Windows, Linux and Mac:
 
 Update the plugin with `git pull https://github.com/meggsimum/qgis2wegue` and restart QGIS
 
+[assets/demo_project.qgs](assets/demo_project.qgs) is a sample QGIS project which is useful for testing.
+
 ## Development Snippets
 
 Check code quality and errors:
@@ -68,3 +69,4 @@ cp -r \
   metadata.txt \
   ${TMP_PLUGIN_DIR}
 ```
+
