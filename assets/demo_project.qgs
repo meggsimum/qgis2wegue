@@ -1,0 +1,2065 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis saveDateTime="2020-12-22T18:50:52" saveUser="jakob" version="3.16.2-Hannover" saveUserFull="Jakob Miksch" projectname="QGIS2Wegue Demo">
+  <homePath path=""/>
+  <title>QGIS2Wegue Demo</title>
+  <autotransaction active="0"/>
+  <evaluateDefaultValues active="0"/>
+  <trust active="0"/>
+  <projectCrs>
+    <spatialrefsys>
+      <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+      <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+      <srsid>3857</srsid>
+      <srid>3857</srid>
+      <authid>EPSG:3857</authid>
+      <description>WGS 84 / Pseudo-Mercator</description>
+      <projectionacronym>merc</projectionacronym>
+      <ellipsoidacronym>WGS84</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </projectCrs>
+  <layer-tree-group>
+    <customproperties/>
+    <layer-tree-layer providerKey="WFS" expanded="1" id="Hauptregionen_NÖ_1_200000_8b1ea34c_c8c3_4f13_a277_04eaa2cfac2c" source=" pagingEnabled='true' restrictToRequestBBOX='1' srsname='EPSG:31259' typename='OGD:HAUPTREGIONEN_200' url='https://sdi.noe.gv.at/at.gv.noe.geoserver/OGD/wfs' url='https://sdi.noe.gv.at/at.gv.noe.geoserver/OGD/wfs?request=GetCapabilities' version='auto'" patch_size="0,0" legend_split_behavior="0" name="WFS Österreich" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer providerKey="WFS" expanded="1" id="nationaleparken_88dd60d5_a04c_45c3_b3c8_2d9fa402c000" source=" pagingEnabled='true' restrictToRequestBBOX='1' srsname='EPSG:28992' typename='nationaleparken:nationaleparken' url='https://geodata.nationaalgeoregister.nl/nationaleparken/wfs' url='https://geodata.nationaalgeoregister.nl/nationaleparken/wfs?request=getcapabilities' version='auto'" patch_size="0,0" legend_split_behavior="0" name="nationaleparken" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer providerKey="WFS" expanded="1" id="app_bikeandride_87ae98c3_e6a5_4b68_893a_b15fee44f707" source=" pagingEnabled='true' restrictToRequestBBOX='1' srsname='EPSG:25832' typename='app:bikeandride' url='https://geodienste.hamburg.de/HH_WFS_Verkehr_opendata' version='auto'" patch_size="0,0" legend_split_behavior="0" name="WFS Hamburg" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer providerKey="wms" expanded="1" id="Nord_605928f3_8f13_4961_b10e_0b6ff0a21bc5" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=BPlan.07338019.12.0&amp;styles&amp;url=https://www.geoportal.rlp.de/mapbender/php/wms.php?inspire%3D1%26layer_id%3D69694%26withChilds%3D1%26INSPIRE%3D1" patch_size="0,0" legend_split_behavior="0" name="WMS Mutterstadt Nord" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer providerKey="wms" expanded="0" id="TopPlusOpen_a4c99088_afba_4266_a82e_5498456758a4" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=web&amp;styles&amp;url=https://sgx.geodatenzentrum.de/wms_topplus_open" patch_size="0,0" legend_split_behavior="0" name="WMS TopPlusOpen" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer providerKey="wms" expanded="0" id="SRTM30_Colored___by_terrestris_42bb8694_a0d4_4da4_8415_1e05fd0fcf50" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=SRTM30-Colored&amp;styles&amp;url=https://ows.terrestris.de/osm-gray/service?VERSION%3D1.1.1" patch_size="0,0" legend_split_behavior="0" name="WMS SRTM30 Colored - by terrestris" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer providerKey="wms" expanded="1" id="WMS_RP_DOP40_51b2dbfc_8786_46b1_ad8f_b12a2f421825" source="contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/jpeg&amp;layers=wms_rp_dop40&amp;styles&amp;url=https://opendata.geoportal.rlp.de/mapbender/php/wms.php?layer_id%3D61675" patch_size="0,0" legend_split_behavior="0" name="WMS RP DOP40" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer providerKey="wms" expanded="1" id="OpenTopoMap_e6ae3028_635a_4a48_87de_cf9f2cca4b0c" source="crs=EPSG:3857&amp;format&amp;referer=Kartendaten:%20%C2%A9%20OpenStreetMap-Mitwirkende,%20SRTM%20%7C%20Kartendarstellung:%20%C2%A9%20OpenTopoMap%20(CC-BY-SA)&amp;type=xyz&amp;url=https://tile.opentopomap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=17&amp;zmin=1" patch_size="0,0" legend_split_behavior="0" name="OpenTopoMap" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer providerKey="wms" expanded="0" id="OpenStreetMap_WMS___by_terrestris_5fe17d02_756b_417a_a466_882068c97448" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=OSM-WMS&amp;styles&amp;url=https://ows.terrestris.de/osm-gray/service?VERSION%3D1.1.1" patch_size="0,0" legend_split_behavior="0" name="WMS OpenStreetMap WMS - by terrestris" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer providerKey="wms" expanded="1" id="OpenStreetMap_44dcdfb1_df74_4e13_b6fc_88e4b23df9ca" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=https://tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=19&amp;zmin=0" patch_size="-1,-1" legend_split_behavior="0" name="OpenStreetMap" checked="Qt::Checked" legend_exp="">
+      <customproperties/>
+    </layer-tree-layer>
+    <custom-order enabled="0">
+      <item>SRTM30_Colored___by_terrestris_42bb8694_a0d4_4da4_8415_1e05fd0fcf50</item>
+      <item>OpenTopoMap_e6ae3028_635a_4a48_87de_cf9f2cca4b0c</item>
+      <item>app_bikeandride_87ae98c3_e6a5_4b68_893a_b15fee44f707</item>
+      <item>Nord_605928f3_8f13_4961_b10e_0b6ff0a21bc5</item>
+      <item>TopPlusOpen_a4c99088_afba_4266_a82e_5498456758a4</item>
+      <item>WMS_RP_DOP40_51b2dbfc_8786_46b1_ad8f_b12a2f421825</item>
+      <item>OpenStreetMap_WMS___by_terrestris_5fe17d02_756b_417a_a466_882068c97448</item>
+      <item>Hauptregionen_NÖ_1_200000_8b1ea34c_c8c3_4f13_a277_04eaa2cfac2c</item>
+      <item>nationaleparken_88dd60d5_a04c_45c3_b3c8_2d9fa402c000</item>
+      <item>OpenStreetMap_44dcdfb1_df74_4e13_b6fc_88e4b23df9ca</item>
+    </custom-order>
+  </layer-tree-group>
+  <snapping-settings enabled="0" minScale="0" mode="2" scaleDependencyMode="0" type="1" unit="1" intersection-snapping="0" maxScale="0" tolerance="12" self-snapping="0">
+    <individual-layer-settings>
+      <layer-setting enabled="0" minScale="0" id="Hauptregionen_NÖ_1_200000_8b1ea34c_c8c3_4f13_a277_04eaa2cfac2c" type="1" units="1" maxScale="0" tolerance="12"/>
+      <layer-setting enabled="0" minScale="0" id="app_bikeandride_87ae98c3_e6a5_4b68_893a_b15fee44f707" type="1" units="1" maxScale="0" tolerance="12"/>
+      <layer-setting enabled="0" minScale="0" id="nationaleparken_88dd60d5_a04c_45c3_b3c8_2d9fa402c000" type="1" units="1" maxScale="0" tolerance="12"/>
+    </individual-layer-settings>
+  </snapping-settings>
+  <relations/>
+  <mapcanvas name="theMapCanvas" annotationsVisible="1">
+    <units>meters</units>
+    <extent>
+      <xmin>341716.94799668854102492</xmin>
+      <ymin>5646118.7288696551695466</ymin>
+      <xmax>1900299.54670096328482032</xmax>
+      <ymax>7492379.25753709021955729</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys>
+        <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+        <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+        <srsid>3857</srsid>
+        <srid>3857</srid>
+        <authid>EPSG:3857</authid>
+        <description>WGS 84 / Pseudo-Mercator</description>
+        <projectionacronym>merc</projectionacronym>
+        <ellipsoidacronym>WGS84</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+    <expressionContextScope/>
+  </mapcanvas>
+  <projectModels/>
+  <legend updateDrawingOrder="true">
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="true" checked="Qt::Checked" name="WFS Österreich">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile isInOverview="0" visible="1" layerid="Hauptregionen_NÖ_1_200000_8b1ea34c_c8c3_4f13_a277_04eaa2cfac2c"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="true" checked="Qt::Checked" name="nationaleparken">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile isInOverview="0" visible="1" layerid="nationaleparken_88dd60d5_a04c_45c3_b3c8_2d9fa402c000"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="true" checked="Qt::Checked" name="WFS Hamburg">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile isInOverview="0" visible="1" layerid="app_bikeandride_87ae98c3_e6a5_4b68_893a_b15fee44f707"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="true" checked="Qt::Checked" name="WMS Mutterstadt Nord">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile isInOverview="0" visible="1" layerid="Nord_605928f3_8f13_4961_b10e_0b6ff0a21bc5"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="false" checked="Qt::Checked" name="WMS TopPlusOpen">
+      <filegroup hidden="false" open="false">
+        <legendlayerfile isInOverview="0" visible="1" layerid="TopPlusOpen_a4c99088_afba_4266_a82e_5498456758a4"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="false" checked="Qt::Checked" name="WMS SRTM30 Colored - by terrestris">
+      <filegroup hidden="false" open="false">
+        <legendlayerfile isInOverview="0" visible="1" layerid="SRTM30_Colored___by_terrestris_42bb8694_a0d4_4da4_8415_1e05fd0fcf50"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="true" checked="Qt::Checked" name="WMS RP DOP40">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile isInOverview="0" visible="1" layerid="WMS_RP_DOP40_51b2dbfc_8786_46b1_ad8f_b12a2f421825"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="true" checked="Qt::Checked" name="OpenTopoMap">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile isInOverview="0" visible="1" layerid="OpenTopoMap_e6ae3028_635a_4a48_87de_cf9f2cca4b0c"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="false" checked="Qt::Checked" name="WMS OpenStreetMap WMS - by terrestris">
+      <filegroup hidden="false" open="false">
+        <legendlayerfile isInOverview="0" visible="1" layerid="OpenStreetMap_WMS___by_terrestris_5fe17d02_756b_417a_a466_882068c97448"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" showFeatureCount="0" open="true" checked="Qt::Checked" name="OpenStreetMap">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile isInOverview="0" visible="1" layerid="OpenStreetMap_44dcdfb1_df74_4e13_b6fc_88e4b23df9ca"/>
+      </filegroup>
+    </legendlayer>
+  </legend>
+  <mapViewDocks/>
+  <mapViewDocks3D/>
+  <main-annotation-layer autoRefreshEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" type="annotation">
+    <id>Annotations_fd99878f_6afd_4fd3_88be_ec6a7db4af37</id>
+    <datasource></datasource>
+    <keywordList>
+      <value></value>
+    </keywordList>
+    <layername></layername>
+    <srs>
+      <spatialrefsys>
+        <wkt></wkt>
+        <proj4></proj4>
+        <srsid>0</srsid>
+        <srid>0</srid>
+        <authid></authid>
+        <description></description>
+        <projectionacronym></projectionacronym>
+        <ellipsoidacronym></ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </srs>
+    <resourceMetadata>
+      <identifier></identifier>
+      <parentidentifier></parentidentifier>
+      <language></language>
+      <type></type>
+      <title></title>
+      <abstract></abstract>
+      <links/>
+      <fees></fees>
+      <encoding></encoding>
+      <crs>
+        <spatialrefsys>
+          <wkt></wkt>
+          <proj4></proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description></description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </crs>
+      <extent/>
+    </resourceMetadata>
+    <items/>
+    <layerOpacity>1</layerOpacity>
+  </main-annotation-layer>
+  <projectlayers>
+    <maplayer refreshOnNotifyMessage="" labelsEnabled="0" minScale="100000000" simplifyAlgorithm="0" refreshOnNotifyEnabled="0" simplifyLocal="1" maxScale="0" autoRefreshTime="0" wkbType="Polygon" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyMaxScale="1" readOnly="0" autoRefreshEnabled="0" geometry="Polygon" type="vector" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0">
+      <extent>
+        <xmin>609916.45220204000361264</xmin>
+        <ymin>253710.6552105899900198</ymin>
+        <xmax>804844.19999912998173386</xmax>
+        <ymax>432253.3502123299986124</ymax>
+      </extent>
+      <id>Hauptregionen_NÖ_1_200000_8b1ea34c_c8c3_4f13_a277_04eaa2cfac2c</id>
+      <datasource> pagingEnabled='true' restrictToRequestBBOX='1' srsname='EPSG:31259' typename='OGD:HAUPTREGIONEN_200' url='https://sdi.noe.gv.at/at.gv.noe.geoserver/OGD/wfs' url='https://sdi.noe.gv.at/at.gv.noe.geoserver/OGD/wfs?request=GetCapabilities' version='auto'</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>WFS Österreich</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["MGI / Austria GK M34",GEOGCS["MGI",DATUM["Militar_Geographische_Institute",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[577.326,90.129,463.919,5.137,1.474,5.297,2.4232],AUTHORITY["EPSG","6312"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4312"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",16.33333333333333],PARAMETER["scale_factor",1],PARAMETER["false_easting",750000],PARAMETER["false_northing",-5000000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AUTHORITY["EPSG","31259"]]</wkt>
+          <proj4>+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1 +x_0=750000 +y_0=-5000000 +ellps=bessel +towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232 +units=m +no_defs</proj4>
+          <srsid>2612</srsid>
+          <srid>31259</srid>
+          <authid>EPSG:31259</authid>
+          <description>MGI / Austria GK M34</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial minx="0" maxz="0" crs="" maxy="0" miny="0" dimensions="2" minz="0" maxx="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider encoding="">WFS</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal durationField="" enabled="0" mode="0" accumulate="0" fixedDuration="0" startField="" endExpression="" endField="" startExpression="" durationUnit="min">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" type="singleSymbol">
+        <symbols>
+          <symbol force_rhr="0" alpha="1" name="0" type="fill" clip_to_extent="1">
+            <layer enabled="1" pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="color" v="243,166,178,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="35,35,35,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" name="name" type="QString"/>
+                  <Option name="properties"/>
+                  <Option value="collection" name="type" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+        <DiagramCategory lineSizeType="MM" backgroundAlpha="255" spacingUnitScale="3x:0,0,0,0,0,0" penColor="#000000" rotationOffset="270" backgroundColor="#ffffff" maxScaleDenominator="1e+8" scaleDependency="Area" showAxis="1" scaleBasedVisibility="0" minScaleDenominator="0" barWidth="5" lineSizeScale="3x:0,0,0,0,0,0" sizeType="MM" penWidth="0" width="15" labelPlacementMethod="XHeight" enabled="0" penAlpha="255" opacity="1" height="15" direction="0" spacingUnit="MM" diagramOrientation="Up" spacing="5" sizeScale="3x:0,0,0,0,0,0" minimumSize="0">
+          <fontProperties style="" description="Cantarell,11,-1,5,50,0,0,0,0,0"/>
+          <attribute field="" color="#000000" label=""/>
+          <axisSymbol>
+            <symbol force_rhr="0" alpha="1" name="" type="line" clip_to_extent="1">
+              <layer enabled="1" pass="0" class="SimpleLine" locked="0">
+                <prop k="align_dash_pattern" v="0"/>
+                <prop k="capstyle" v="square"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="dash_pattern_offset" v="0"/>
+                <prop k="dash_pattern_offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="dash_pattern_offset_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="0"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="35,35,35,255"/>
+                <prop k="line_style" v="solid"/>
+                <prop k="line_width" v="0.26"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="ring_filter" v="0"/>
+                <prop k="tweak_dash_pattern_on_corners" v="0"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option value="" name="name" type="QString"/>
+                    <Option name="properties"/>
+                    <Option value="collection" name="type" type="QString"/>
+                  </Option>
+                </data_defined_properties>
+              </layer>
+            </symbol>
+          </axisSymbol>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings linePlacementFlags="18" showAll="1" zIndex="0" dist="0" priority="0" obstacle="0" placement="1">
+        <properties>
+          <Option type="Map">
+            <Option value="" name="name" type="QString"/>
+            <Option name="properties"/>
+            <Option value="collection" name="type" type="QString"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks/>
+        <checkConfiguration type="Map">
+          <Option name="QgsGeometryGapCheck" type="Map">
+            <Option value="0" name="allowedGapsBuffer" type="double"/>
+            <Option value="false" name="allowedGapsEnabled" type="bool"/>
+            <Option value="" name="allowedGapsLayer" type="QString"/>
+          </Option>
+        </checkConfiguration>
+      </geometryOptions>
+      <legend type="default-vector"/>
+      <referencedLayers/>
+      <fieldConfiguration>
+        <field configurationFlags="None" name="HRNR">
+          <editWidget type="Range">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="HRCD">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="HRNAME">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="EMASST">
+          <editWidget type="Range">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="LASTUPDATE">
+          <editWidget type="DateTime">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias field="HRNR" name="" index="0"/>
+        <alias field="HRCD" name="" index="1"/>
+        <alias field="HRNAME" name="" index="2"/>
+        <alias field="EMASST" name="" index="3"/>
+        <alias field="LASTUPDATE" name="" index="4"/>
+      </aliases>
+      <defaults>
+        <default expression="" field="HRNR" applyOnUpdate="0"/>
+        <default expression="" field="HRCD" applyOnUpdate="0"/>
+        <default expression="" field="HRNAME" applyOnUpdate="0"/>
+        <default expression="" field="EMASST" applyOnUpdate="0"/>
+        <default expression="" field="LASTUPDATE" applyOnUpdate="0"/>
+      </defaults>
+      <constraints>
+        <constraint field="HRNR" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="HRCD" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="HRNAME" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="EMASST" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="LASTUPDATE" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="HRNR" desc=""/>
+        <constraint exp="" field="HRCD" desc=""/>
+        <constraint exp="" field="HRNAME" desc=""/>
+        <constraint exp="" field="EMASST" desc=""/>
+        <constraint exp="" field="LASTUPDATE" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+        <columns>
+          <column hidden="0" width="-1" name="HRNR" type="field"/>
+          <column hidden="0" width="-1" name="HRCD" type="field"/>
+          <column hidden="0" width="-1" name="HRNAME" type="field"/>
+          <column hidden="0" width="-1" name="EMASST" type="field"/>
+          <column hidden="0" width="-1" name="LASTUPDATE" type="field"/>
+          <column hidden="1" width="-1" type="actions"/>
+        </columns>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <storedexpressions/>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+	geom = feature.geometry()
+	control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable>
+        <field name="EMASST" editable="1"/>
+        <field name="HRCD" editable="1"/>
+        <field name="HRNAME" editable="1"/>
+        <field name="HRNR" editable="1"/>
+        <field name="LASTUPDATE" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field labelOnTop="0" name="EMASST"/>
+        <field labelOnTop="0" name="HRCD"/>
+        <field labelOnTop="0" name="HRNAME"/>
+        <field labelOnTop="0" name="HRNR"/>
+        <field labelOnTop="0" name="LASTUPDATE"/>
+      </labelOnTop>
+      <dataDefinedFieldProperties/>
+      <widgets/>
+      <previewExpression>HRNAME</previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" autoRefreshEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" type="raster" maxScale="0">
+      <extent>
+        <xmin>929433.14531082997564226</xmin>
+        <ymin>6350965.51140640024095774</ymin>
+        <xmax>930170.08033988298848271</xmax>
+        <ymax>6351753.1566302003338933</ymax>
+      </extent>
+      <id>Nord_605928f3_8f13_4961_b10e_0b6ff0a21bc5</id>
+      <datasource>crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=BPlan.07338019.12.0&amp;styles&amp;url=https://www.geoportal.rlp.de/mapbender/php/wms.php?inspire%3D1%26layer_id%3D69694%26withChilds%3D1%26INSPIRE%3D1</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>WMS Mutterstadt Nord</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo-Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider>wms</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>0</Searchable>
+      </flags>
+      <temporal enabled="0" mode="0" fetchMode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="Undefined" key="identify/format"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour" maxOversampling="2"/>
+        </provider>
+        <rasterrenderer opacity="1" type="singlebandcolordata" alphaBand="-1" band="1" nodataColor="">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+        </rasterrenderer>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" saturation="0" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" colorizeRed="255" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" autoRefreshEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" type="raster" maxScale="0">
+      <extent>
+        <xmin>-20037508.34278924390673637</xmin>
+        <ymin>-20037508.34278925508260727</ymin>
+        <xmax>20037508.34278924390673637</xmax>
+        <ymax>20037508.34278924390673637</ymax>
+      </extent>
+      <id>OpenStreetMap_44dcdfb1_df74_4e13_b6fc_88e4b23df9ca</id>
+      <datasource>crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=https://tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=19&amp;zmin=0</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>OpenStreetMap</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo-Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider>wms</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>0</Searchable>
+      </flags>
+      <temporal enabled="0" mode="0" fetchMode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="Undefined" key="identify/format"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour" maxOversampling="2"/>
+        </provider>
+        <rasterrenderer opacity="1" type="singlebandcolordata" alphaBand="-1" band="1" nodataColor="">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+        </rasterrenderer>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" saturation="0" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" colorizeRed="255" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" autoRefreshEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" type="raster" maxScale="0">
+      <extent>
+        <xmin>-20037508.34279999881982803</xmin>
+        <ymin>-25819498.51350000128149986</ymin>
+        <xmax>20037508.34279999881982803</xmax>
+        <ymax>25819498.51350000128149986</ymax>
+      </extent>
+      <id>OpenStreetMap_WMS___by_terrestris_5fe17d02_756b_417a_a466_882068c97448</id>
+      <datasource>crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=OSM-WMS&amp;styles&amp;url=https://ows.terrestris.de/osm-gray/service?VERSION%3D1.1.1</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>WMS OpenStreetMap WMS - by terrestris</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo-Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider>wms</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>0</Searchable>
+      </flags>
+      <temporal enabled="0" mode="0" fetchMode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="Html" key="identify/format"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour" maxOversampling="2"/>
+        </provider>
+        <rasterrenderer opacity="1" type="singlebandcolordata" alphaBand="-1" band="1" nodataColor="">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+        </rasterrenderer>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" saturation="0" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" colorizeRed="255" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" autoRefreshEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" type="raster" maxScale="0">
+      <extent>
+        <xmin>-20037508.34278924390673637</xmin>
+        <ymin>-20037508.34278925508260727</ymin>
+        <xmax>20037508.34278924390673637</xmax>
+        <ymax>20037508.34278924390673637</ymax>
+      </extent>
+      <id>OpenTopoMap_e6ae3028_635a_4a48_87de_cf9f2cca4b0c</id>
+      <datasource>crs=EPSG:3857&amp;format&amp;referer=Kartendaten:%20%C2%A9%20OpenStreetMap-Mitwirkende,%20SRTM%20%7C%20Kartendarstellung:%20%C2%A9%20OpenTopoMap%20(CC-BY-SA)&amp;type=xyz&amp;url=https://tile.opentopomap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=17&amp;zmin=1</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>OpenTopoMap</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo-Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider>wms</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>0</Searchable>
+      </flags>
+      <temporal enabled="0" mode="0" fetchMode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="Undefined" key="identify/format"/>
+        <property value="true" key="qgis2web/Interactive"/>
+        <property value="true" key="qgis2web/Visible"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour" maxOversampling="2"/>
+        </provider>
+        <rasterrenderer opacity="1" type="singlebandcolordata" alphaBand="-1" band="1" nodataColor="">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+        </rasterrenderer>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" saturation="0" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" colorizeRed="255" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" autoRefreshEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" type="raster" maxScale="0">
+      <extent>
+        <xmin>-20037508.34279999881982803</xmin>
+        <ymin>-7558415.65608000010251999</ymin>
+        <xmax>20037508.34279999881982803</xmax>
+        <ymax>8399737.88982000015676022</ymax>
+      </extent>
+      <id>SRTM30_Colored___by_terrestris_42bb8694_a0d4_4da4_8415_1e05fd0fcf50</id>
+      <datasource>crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=SRTM30-Colored&amp;styles&amp;url=https://ows.terrestris.de/osm-gray/service?VERSION%3D1.1.1</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>WMS SRTM30 Colored - by terrestris</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo-Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider>wms</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>0</Searchable>
+      </flags>
+      <temporal enabled="0" mode="0" fetchMode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="Undefined" key="identify/format"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour" maxOversampling="2"/>
+        </provider>
+        <rasterrenderer opacity="1" type="singlebandcolordata" alphaBand="-1" band="1" nodataColor="">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+        </rasterrenderer>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" saturation="0" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" colorizeRed="255" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" autoRefreshEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" type="raster" maxScale="0">
+      <extent>
+        <xmin>-20037508.34279999881982803</xmin>
+        <ymin>-20037508.34279999881982803</ymin>
+        <xmax>20037508.34279999881982803</xmax>
+        <ymax>20037508.34279999881982803</ymax>
+      </extent>
+      <id>TopPlusOpen_a4c99088_afba_4266_a82e_5498456758a4</id>
+      <datasource>crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=web&amp;styles&amp;url=https://sgx.geodatenzentrum.de/wms_topplus_open</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>WMS TopPlusOpen</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo-Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider>wms</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>0</Searchable>
+      </flags>
+      <temporal enabled="0" mode="0" fetchMode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="Undefined" key="identify/format"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour" maxOversampling="2"/>
+        </provider>
+        <rasterrenderer opacity="1" type="singlebandcolordata" alphaBand="-1" band="1" nodataColor="">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+        </rasterrenderer>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" saturation="0" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" colorizeRed="255" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer hasScaleBasedVisibilityFlag="0" minScale="1e+8" autoRefreshEnabled="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" type="raster" maxScale="0">
+      <extent>
+        <xmin>672121.48192690301220864</xmin>
+        <ymin>6257571.81683862023055553</ymin>
+        <xmax>959317.97580919205211103</xmax>
+        <ymax>6621452.92386388964951038</ymax>
+      </extent>
+      <id>WMS_RP_DOP40_51b2dbfc_8786_46b1_ad8f_b12a2f421825</id>
+      <datasource>contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/jpeg&amp;layers=wms_rp_dop40&amp;styles&amp;url=https://opendata.geoportal.rlp.de/mapbender/php/wms.php?layer_id%3D61675</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>WMS RP DOP40</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo-Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider>wms</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>0</Searchable>
+      </flags>
+      <temporal enabled="0" mode="0" fetchMode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <property value="Undefined" key="identify/format"/>
+      </customproperties>
+      <pipe>
+        <provider>
+          <resampling enabled="false" zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="nearestNeighbour" maxOversampling="2"/>
+        </provider>
+        <rasterrenderer opacity="1" type="singlebandcolordata" alphaBand="-1" band="1" nodataColor="">
+          <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
+        </rasterrenderer>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" saturation="0" colorizeGreen="128" colorizeOn="0" colorizeStrength="100" colorizeRed="255" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer refreshOnNotifyMessage="" labelsEnabled="0" minScale="100000000" simplifyAlgorithm="0" refreshOnNotifyEnabled="0" simplifyLocal="1" maxScale="0" autoRefreshTime="0" wkbType="Point" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyMaxScale="1" readOnly="0" autoRefreshEnabled="0" geometry="Point" type="vector" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0">
+      <extent>
+        <xmin>520461.11599999997997656</xmin>
+        <ymin>5892484.526999999769032</ymin>
+        <xmax>623722.33200000005308539</xmax>
+        <ymax>5985903.49600000027567148</ymax>
+      </extent>
+      <id>app_bikeandride_87ae98c3_e6a5_4b68_893a_b15fee44f707</id>
+      <datasource> pagingEnabled='true' restrictToRequestBBOX='1' srsname='EPSG:25832' typename='app:bikeandride' url='https://geodienste.hamburg.de/HH_WFS_Verkehr_opendata' version='auto'</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>WFS Hamburg</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["ETRS89 / UTM zone 32N",GEOGCS["ETRS89",DATUM["European_Terrestrial_Reference_System_1989",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY["EPSG","6258"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4258"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",9],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","25832"]]</wkt>
+          <proj4>+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>2105</srsid>
+          <srid>25832</srid>
+          <authid>EPSG:25832</authid>
+          <description>ETRS89 / UTM zone 32N</description>
+          <projectionacronym>utm</projectionacronym>
+          <ellipsoidacronym>GRS80</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="">WFS</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal durationField="" enabled="0" mode="0" accumulate="0" fixedDuration="0" startField="" endExpression="" endField="" startExpression="" durationUnit="min">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" type="singleSymbol">
+        <symbols>
+          <symbol force_rhr="0" alpha="1" name="0" type="marker" clip_to_extent="1">
+            <layer enabled="1" pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="219,30,42,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="diamond"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="128,17,25,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.4"/>
+              <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="4.4"/>
+              <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" name="name" type="QString"/>
+                  <Option name="properties"/>
+                  <Option value="collection" name="type" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks type="StringList">
+          <Option value="" type="QString"/>
+        </activeChecks>
+        <checkConfiguration/>
+      </geometryOptions>
+      <legend type="default-vector"/>
+      <referencedLayers/>
+      <fieldConfiguration>
+        <field configurationFlags="None" name="bezeichnung">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="punkt">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="symbol">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="adresse">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="ort">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="anlagen">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="plaetzegesamt">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="plaetzefreizugaenglich">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="platzdach">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="buegeldach">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="vordraddach">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="platzoffen">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="buegeloffen">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="vordradoffen">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="fahrradbox">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="sammelschlanlage">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="ansprechpartner">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="telefon">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="email">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="stand">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="belegung_absolut">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="belegung_relativ">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="wildparker_absolut">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="gesamtbelegung_absolut">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="gesamtbelegung_relativ">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="fahrradleichen">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias field="bezeichnung" name="" index="0"/>
+        <alias field="punkt" name="" index="1"/>
+        <alias field="symbol" name="" index="2"/>
+        <alias field="adresse" name="" index="3"/>
+        <alias field="ort" name="" index="4"/>
+        <alias field="anlagen" name="" index="5"/>
+        <alias field="plaetzegesamt" name="" index="6"/>
+        <alias field="plaetzefreizugaenglich" name="" index="7"/>
+        <alias field="platzdach" name="" index="8"/>
+        <alias field="buegeldach" name="" index="9"/>
+        <alias field="vordraddach" name="" index="10"/>
+        <alias field="platzoffen" name="" index="11"/>
+        <alias field="buegeloffen" name="" index="12"/>
+        <alias field="vordradoffen" name="" index="13"/>
+        <alias field="fahrradbox" name="" index="14"/>
+        <alias field="sammelschlanlage" name="" index="15"/>
+        <alias field="ansprechpartner" name="" index="16"/>
+        <alias field="telefon" name="" index="17"/>
+        <alias field="email" name="" index="18"/>
+        <alias field="stand" name="" index="19"/>
+        <alias field="belegung_absolut" name="" index="20"/>
+        <alias field="belegung_relativ" name="" index="21"/>
+        <alias field="wildparker_absolut" name="" index="22"/>
+        <alias field="gesamtbelegung_absolut" name="" index="23"/>
+        <alias field="gesamtbelegung_relativ" name="" index="24"/>
+        <alias field="fahrradleichen" name="" index="25"/>
+      </aliases>
+      <defaults>
+        <default expression="" field="bezeichnung" applyOnUpdate="0"/>
+        <default expression="" field="punkt" applyOnUpdate="0"/>
+        <default expression="" field="symbol" applyOnUpdate="0"/>
+        <default expression="" field="adresse" applyOnUpdate="0"/>
+        <default expression="" field="ort" applyOnUpdate="0"/>
+        <default expression="" field="anlagen" applyOnUpdate="0"/>
+        <default expression="" field="plaetzegesamt" applyOnUpdate="0"/>
+        <default expression="" field="plaetzefreizugaenglich" applyOnUpdate="0"/>
+        <default expression="" field="platzdach" applyOnUpdate="0"/>
+        <default expression="" field="buegeldach" applyOnUpdate="0"/>
+        <default expression="" field="vordraddach" applyOnUpdate="0"/>
+        <default expression="" field="platzoffen" applyOnUpdate="0"/>
+        <default expression="" field="buegeloffen" applyOnUpdate="0"/>
+        <default expression="" field="vordradoffen" applyOnUpdate="0"/>
+        <default expression="" field="fahrradbox" applyOnUpdate="0"/>
+        <default expression="" field="sammelschlanlage" applyOnUpdate="0"/>
+        <default expression="" field="ansprechpartner" applyOnUpdate="0"/>
+        <default expression="" field="telefon" applyOnUpdate="0"/>
+        <default expression="" field="email" applyOnUpdate="0"/>
+        <default expression="" field="stand" applyOnUpdate="0"/>
+        <default expression="" field="belegung_absolut" applyOnUpdate="0"/>
+        <default expression="" field="belegung_relativ" applyOnUpdate="0"/>
+        <default expression="" field="wildparker_absolut" applyOnUpdate="0"/>
+        <default expression="" field="gesamtbelegung_absolut" applyOnUpdate="0"/>
+        <default expression="" field="gesamtbelegung_relativ" applyOnUpdate="0"/>
+        <default expression="" field="fahrradleichen" applyOnUpdate="0"/>
+      </defaults>
+      <constraints>
+        <constraint field="bezeichnung" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="punkt" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="symbol" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="adresse" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="ort" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="anlagen" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="plaetzegesamt" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="plaetzefreizugaenglich" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="platzdach" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="buegeldach" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="vordraddach" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="platzoffen" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="buegeloffen" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="vordradoffen" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="fahrradbox" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="sammelschlanlage" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="ansprechpartner" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="telefon" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="email" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="stand" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="belegung_absolut" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="belegung_relativ" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="wildparker_absolut" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="gesamtbelegung_absolut" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="gesamtbelegung_relativ" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="fahrradleichen" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="bezeichnung" desc=""/>
+        <constraint exp="" field="punkt" desc=""/>
+        <constraint exp="" field="symbol" desc=""/>
+        <constraint exp="" field="adresse" desc=""/>
+        <constraint exp="" field="ort" desc=""/>
+        <constraint exp="" field="anlagen" desc=""/>
+        <constraint exp="" field="plaetzegesamt" desc=""/>
+        <constraint exp="" field="plaetzefreizugaenglich" desc=""/>
+        <constraint exp="" field="platzdach" desc=""/>
+        <constraint exp="" field="buegeldach" desc=""/>
+        <constraint exp="" field="vordraddach" desc=""/>
+        <constraint exp="" field="platzoffen" desc=""/>
+        <constraint exp="" field="buegeloffen" desc=""/>
+        <constraint exp="" field="vordradoffen" desc=""/>
+        <constraint exp="" field="fahrradbox" desc=""/>
+        <constraint exp="" field="sammelschlanlage" desc=""/>
+        <constraint exp="" field="ansprechpartner" desc=""/>
+        <constraint exp="" field="telefon" desc=""/>
+        <constraint exp="" field="email" desc=""/>
+        <constraint exp="" field="stand" desc=""/>
+        <constraint exp="" field="belegung_absolut" desc=""/>
+        <constraint exp="" field="belegung_relativ" desc=""/>
+        <constraint exp="" field="wildparker_absolut" desc=""/>
+        <constraint exp="" field="gesamtbelegung_absolut" desc=""/>
+        <constraint exp="" field="gesamtbelegung_relativ" desc=""/>
+        <constraint exp="" field="fahrradleichen" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <storedexpressions/>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <dataDefinedFieldProperties/>
+      <widgets/>
+      <previewExpression></previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+    <maplayer refreshOnNotifyMessage="" labelsEnabled="0" minScale="100000000" simplifyAlgorithm="0" refreshOnNotifyEnabled="0" simplifyLocal="1" maxScale="0" autoRefreshTime="0" wkbType="MultiPolygon" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyMaxScale="1" readOnly="0" autoRefreshEnabled="0" geometry="Polygon" type="vector" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0">
+      <extent>
+        <xmin>36781.01950000000215368</xmin>
+        <ymin>350383.25</ymin>
+        <xmax>246437.0625</xmax>
+        <ymax>615251.37360000004991889</ymax>
+      </extent>
+      <id>nationaleparken_88dd60d5_a04c_45c3_b3c8_2d9fa402c000</id>
+      <datasource> pagingEnabled='true' restrictToRequestBBOX='1' srsname='EPSG:28992' typename='nationaleparken:nationaleparken' url='https://geodata.nationaalgeoregister.nl/nationaleparken/wfs' url='https://geodata.nationaalgeoregister.nl/nationaleparken/wfs?request=getcapabilities' version='auto'</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>nationaleparken</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt>PROJCS["Amersfoort / RD New",GEOGCS["Amersfoort",DATUM["Amersfoort",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812],AUTHORITY["EPSG","6289"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4289"]],PROJECTION["Oblique_Stereographic"],PARAMETER["latitude_of_origin",52.15616055555555],PARAMETER["central_meridian",5.38763888888889],PARAMETER["scale_factor",0.9999079],PARAMETER["false_easting",155000],PARAMETER["false_northing",463000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],AUTHORITY["EPSG","28992"]]</wkt>
+          <proj4>+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +units=m +no_defs</proj4>
+          <srsid>2517</srsid>
+          <srid>28992</srid>
+          <authid>EPSG:28992</authid>
+          <description>Amersfoort / RD New</description>
+          <projectionacronym>sterea</projectionacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="">WFS</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <temporal durationField="" enabled="0" mode="0" accumulate="0" fixedDuration="0" startField="" endExpression="" endField="" startExpression="" durationUnit="min">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" type="singleSymbol">
+        <symbols>
+          <symbol force_rhr="0" alpha="1" name="0" type="fill" clip_to_extent="1">
+            <layer enabled="1" pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="color" v="213,180,60,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="35,35,35,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" name="name" type="QString"/>
+                  <Option name="properties"/>
+                  <Option value="collection" name="type" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks type="StringList">
+          <Option value="" type="QString"/>
+        </activeChecks>
+        <checkConfiguration/>
+      </geometryOptions>
+      <legend type="default-vector"/>
+      <referencedLayers/>
+      <fieldConfiguration>
+        <field configurationFlags="None" name="naam">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="instrument">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="nr">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="datum">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="bron">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="fiat_secr">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="hectares">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias field="naam" name="" index="0"/>
+        <alias field="instrument" name="" index="1"/>
+        <alias field="nr" name="" index="2"/>
+        <alias field="datum" name="" index="3"/>
+        <alias field="bron" name="" index="4"/>
+        <alias field="fiat_secr" name="" index="5"/>
+        <alias field="hectares" name="" index="6"/>
+      </aliases>
+      <defaults>
+        <default expression="" field="naam" applyOnUpdate="0"/>
+        <default expression="" field="instrument" applyOnUpdate="0"/>
+        <default expression="" field="nr" applyOnUpdate="0"/>
+        <default expression="" field="datum" applyOnUpdate="0"/>
+        <default expression="" field="bron" applyOnUpdate="0"/>
+        <default expression="" field="fiat_secr" applyOnUpdate="0"/>
+        <default expression="" field="hectares" applyOnUpdate="0"/>
+      </defaults>
+      <constraints>
+        <constraint field="naam" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="instrument" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="nr" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="datum" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="bron" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="fiat_secr" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="hectares" constraints="0" unique_strength="0" notnull_strength="0" exp_strength="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="naam" desc=""/>
+        <constraint exp="" field="instrument" desc=""/>
+        <constraint exp="" field="nr" desc=""/>
+        <constraint exp="" field="datum" desc=""/>
+        <constraint exp="" field="bron" desc=""/>
+        <constraint exp="" field="fiat_secr" desc=""/>
+        <constraint exp="" field="hectares" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <storedexpressions/>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <dataDefinedFieldProperties/>
+      <widgets/>
+      <previewExpression></previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+  </projectlayers>
+  <layerorder>
+    <layer id="SRTM30_Colored___by_terrestris_42bb8694_a0d4_4da4_8415_1e05fd0fcf50"/>
+    <layer id="OpenTopoMap_e6ae3028_635a_4a48_87de_cf9f2cca4b0c"/>
+    <layer id="app_bikeandride_87ae98c3_e6a5_4b68_893a_b15fee44f707"/>
+    <layer id="Nord_605928f3_8f13_4961_b10e_0b6ff0a21bc5"/>
+    <layer id="TopPlusOpen_a4c99088_afba_4266_a82e_5498456758a4"/>
+    <layer id="WMS_RP_DOP40_51b2dbfc_8786_46b1_ad8f_b12a2f421825"/>
+    <layer id="OpenStreetMap_WMS___by_terrestris_5fe17d02_756b_417a_a466_882068c97448"/>
+    <layer id="Hauptregionen_NÖ_1_200000_8b1ea34c_c8c3_4f13_a277_04eaa2cfac2c"/>
+    <layer id="nationaleparken_88dd60d5_a04c_45c3_b3c8_2d9fa402c000"/>
+    <layer id="OpenStreetMap_44dcdfb1_df74_4e13_b6fc_88e4b23df9ca"/>
+  </layerorder>
+  <properties>
+    <CopyrightLabel>
+      <Enabled type="int">0</Enabled>
+      <Label type="QString"></Label>
+      <MarginH type="int">1</MarginH>
+      <MarginV type="int">1</MarginV>
+    </CopyrightLabel>
+    <DefaultStyles>
+      <ColorRamp type="QString"></ColorRamp>
+      <Fill type="QString"></Fill>
+      <Line type="QString"></Line>
+      <Marker type="QString"></Marker>
+      <Opacity type="double">1</Opacity>
+      <RandomColors type="bool">true</RandomColors>
+    </DefaultStyles>
+    <Digitizing>
+      <AvoidIntersectionsMode type="int">2</AvoidIntersectionsMode>
+    </Digitizing>
+    <Gui>
+      <CanvasColorBluePart type="int">255</CanvasColorBluePart>
+      <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
+      <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+      <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
+      <SelectionColorBluePart type="int">0</SelectionColorBluePart>
+      <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
+      <SelectionColorRedPart type="int">255</SelectionColorRedPart>
+    </Gui>
+    <Legend>
+      <filterByMap type="bool">false</filterByMap>
+    </Legend>
+    <Macros>
+      <pythonCode type="QString"></pythonCode>
+    </Macros>
+    <Measure>
+      <Ellipsoid type="QString">NONE</Ellipsoid>
+    </Measure>
+    <Measurement>
+      <AreaUnits type="QString">m2</AreaUnits>
+      <DistanceUnits type="QString">meters</DistanceUnits>
+    </Measurement>
+    <PAL>
+      <CandidatesLine type="int">50</CandidatesLine>
+      <CandidatesLinePerCM type="double">5</CandidatesLinePerCM>
+      <CandidatesPoint type="int">16</CandidatesPoint>
+      <CandidatesPolygon type="int">30</CandidatesPolygon>
+      <CandidatesPolygonPerCM type="double">2.5</CandidatesPolygonPerCM>
+      <DrawRectOnly type="bool">false</DrawRectOnly>
+      <DrawUnplaced type="bool">false</DrawUnplaced>
+      <PlacementEngineVersion type="int">0</PlacementEngineVersion>
+      <SearchMethod type="int">0</SearchMethod>
+      <ShowingAllLabels type="bool">false</ShowingAllLabels>
+      <ShowingCandidates type="bool">false</ShowingCandidates>
+      <ShowingPartialsLabels type="bool">true</ShowingPartialsLabels>
+      <TextFormat type="int">0</TextFormat>
+      <UnplacedColor type="QString">255,0,0,255</UnplacedColor>
+    </PAL>
+    <Paths>
+      <Absolute type="bool">false</Absolute>
+    </Paths>
+    <PositionPrecision>
+      <Automatic type="bool">true</Automatic>
+      <DecimalPlaces type="int">2</DecimalPlaces>
+      <DegreeFormat type="QString">MU</DegreeFormat>
+    </PositionPrecision>
+    <SpatialRefSys>
+      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
+    </SpatialRefSys>
+    <WCSLayers type="QStringList"/>
+    <WCSUrl type="QString"></WCSUrl>
+    <WFSLayers type="QStringList"/>
+    <WFSTLayers>
+      <Delete type="QStringList"/>
+      <Insert type="QStringList"/>
+      <Update type="QStringList"/>
+    </WFSTLayers>
+    <WFSUrl type="QString"></WFSUrl>
+    <WMSAccessConstraints type="QString">None</WMSAccessConstraints>
+    <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+    <WMSContactMail type="QString"></WMSContactMail>
+    <WMSContactOrganization type="QString"></WMSContactOrganization>
+    <WMSContactPerson type="QString"></WMSContactPerson>
+    <WMSContactPhone type="QString"></WMSContactPhone>
+    <WMSContactPosition type="QString"></WMSContactPosition>
+    <WMSDefaultMapUnitsPerMm type="double">99.99</WMSDefaultMapUnitsPerMm>
+    <WMSFees type="QString">conditions unknown</WMSFees>
+    <WMSImageQuality type="int">90</WMSImageQuality>
+    <WMSKeywordList type="QStringList">
+      <value></value>
+    </WMSKeywordList>
+    <WMSMaxAtlasFeatures type="int">1</WMSMaxAtlasFeatures>
+    <WMSOnlineResource type="QString"></WMSOnlineResource>
+    <WMSPrecision type="QString">8</WMSPrecision>
+    <WMSRootName type="QString"></WMSRootName>
+    <WMSSegmentizeFeatureInfoGeometry type="bool">false</WMSSegmentizeFeatureInfoGeometry>
+    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+    <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
+    <WMSServiceTitle type="QString"></WMSServiceTitle>
+    <WMSTileBuffer type="int">0</WMSTileBuffer>
+    <WMSUrl type="QString"></WMSUrl>
+    <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
+    <WMTSGrids>
+      <CRS type="QStringList"/>
+      <Config type="QStringList"/>
+    </WMTSGrids>
+    <WMTSJpegLayers>
+      <Group type="QStringList"/>
+      <Layer type="QStringList"/>
+      <Project type="bool">false</Project>
+    </WMTSJpegLayers>
+    <WMTSLayers>
+      <Group type="QStringList"/>
+      <Layer type="QStringList"/>
+      <Project type="bool">false</Project>
+    </WMTSLayers>
+    <WMTSMinScale type="int">5000</WMTSMinScale>
+    <WMTSPngLayers>
+      <Group type="QStringList"/>
+      <Layer type="QStringList"/>
+      <Project type="bool">false</Project>
+    </WMTSPngLayers>
+    <WMTSUrl type="QString"></WMTSUrl>
+    <qgis2web>
+      <Addabstract type="QString">None</Addabstract>
+      <Addaddresssearch type="bool">false</Addaddresssearch>
+      <Addlayerslist type="QString">None</Addlayerslist>
+      <Exporter type="QString">folder</Exporter>
+      <Exportfolder type="QString">/tmp/qgis2web</Exportfolder>
+      <Extent type="QString">Canvas extent</Extent>
+      <Geolocateuser type="bool">false</Geolocateuser>
+      <Highlightonhover type="bool">false</Highlightonhover>
+      <Layersearch type="QString">None</Layersearch>
+      <MatchprojectCRS type="bool">false</MatchprojectCRS>
+      <Maxzoomlevel type="QString">28</Maxzoomlevel>
+      <Measuretool type="QString">None</Measuretool>
+      <MinifyGeoJSONfiles type="bool">false</MinifyGeoJSONfiles>
+      <Minzoomlevel type="QString">1</Minzoomlevel>
+      <Precision type="QString">maintain</Precision>
+      <Restricttoextent type="bool">false</Restricttoextent>
+      <Searchlayer type="QString"></Searchlayer>
+      <Showpopupsonhover type="bool">false</Showpopupsonhover>
+      <Template type="QString">canvas-size</Template>
+      <WidgetBackground type="QString">#f8f8f8</WidgetBackground>
+      <WidgetIcon type="QString">#000000</WidgetIcon>
+      <mapFormat type="QString">openlayers</mapFormat>
+    </qgis2web>
+  </properties>
+  <dataDefinedServerProperties>
+    <Option type="Map">
+      <Option value="" name="name" type="QString"/>
+      <Option name="properties"/>
+      <Option value="collection" name="type" type="QString"/>
+    </Option>
+  </dataDefinedServerProperties>
+  <visibility-presets/>
+  <transformContext>
+    <srcDest sourceTransform="" destTransform="" source="" dest=""/>
+    <srcDest sourceTransform="+towgs84=0,0,0" destTransform="" source="EPSG:25832" dest="EPSG:3857"/>
+    <srcDest sourceTransform="+towgs84=565.237,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812" destTransform="" source="EPSG:28992" dest="EPSG:3857"/>
+    <srcDest sourceTransform="+towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232" destTransform="" source="EPSG:31259" dest="EPSG:3857"/>
+  </transformContext>
+  <projectMetadata>
+    <identifier></identifier>
+    <parentidentifier></parentidentifier>
+    <language></language>
+    <type></type>
+    <title>QGIS2Wegue Demo</title>
+    <abstract></abstract>
+    <contact>
+      <name></name>
+      <organization></organization>
+      <position></position>
+      <voice></voice>
+      <fax></fax>
+      <email></email>
+      <role></role>
+    </contact>
+    <links/>
+    <author>Jakob Miksch</author>
+    <creation>2019-11-08T21:35:30</creation>
+  </projectMetadata>
+  <Annotations/>
+  <Layouts/>
+  <Bookmarks/>
+  <ProjectViewSettings UseProjectScales="0">
+    <Scales/>
+    <DefaultViewExtent xmin="328251.73333103198092431" xmax="1913764.76136661972850561" ymax="7492379.25753709021955729" ymin="5646118.7288696551695466">
+      <spatialrefsys>
+        <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+        <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+        <srsid>3857</srsid>
+        <srid>3857</srid>
+        <authid>EPSG:3857</authid>
+        <description>WGS 84 / Pseudo-Mercator</description>
+        <projectionacronym>merc</projectionacronym>
+        <ellipsoidacronym>WGS84</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </DefaultViewExtent>
+  </ProjectViewSettings>
+  <ProjectTimeSettings timeStepUnit="h" timeStep="1" frameRate="1" cumulativeTemporalRange="0"/>
+  <ProjectDisplaySettings>
+    <BearingFormat id="bearing">
+      <Option type="Map">
+        <Option value="" name="decimal_separator" type="QChar"/>
+        <Option value="6" name="decimals" type="int"/>
+        <Option value="0" name="direction_format" type="int"/>
+        <Option value="0" name="rounding_type" type="int"/>
+        <Option value="false" name="show_plus" type="bool"/>
+        <Option value="true" name="show_thousand_separator" type="bool"/>
+        <Option value="false" name="show_trailing_zeros" type="bool"/>
+        <Option value="" name="thousand_separator" type="QChar"/>
+      </Option>
+    </BearingFormat>
+  </ProjectDisplaySettings>
+</qgis>
