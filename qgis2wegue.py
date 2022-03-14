@@ -151,7 +151,7 @@ class qgis2wegue:
 
     def store_wegue_conf_to_file(self):
         """
-        Collects all paramters from QGIS and the plugin form
+        Collects all parameters from QGIS and the plugin form
         and creates the Wegue configuration
         """
 
@@ -208,6 +208,18 @@ class qgis2wegue:
 
         if self.dlg.q2w_geolocator.isChecked():
             self.wegue_conf.add_geolocator()
+
+        if self.dlg.q2w_overview_map.isChecked():
+            self.wegue_conf.add_overview_map()
+
+        if self.dlg.q2w_view_animation.isChecked():
+            self.wegue_conf.add_view_animation()
+
+        if self.dlg.q2w_map_recorder.isChecked():
+            self.wegue_conf.add_maprecorder()
+
+        if self.dlg.q2w_attribute_table.isChecked():
+            self.wegue_conf.add_attribute_table()
 
         # color
         qt_color = self.dlg.q2w_color_widget.color()

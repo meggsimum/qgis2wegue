@@ -45,17 +45,34 @@ class WegueConfiguration:
             "history": True
         }
 
+    def add_overview_map(self):
+        self.overviewMap = {
+            "visible": False
+        }
+
+    def add_view_animation(self):
+        self.viewAnimation = {
+            "type": "fly",
+            "options": {
+                "duration": 3000,
+                "zoom": 15,
+                "maxZoom": 15
+            }
+        }
+
     def add_layer_list(self):
         self.modules["wgu-layerlist"] = {
             "target": "menu",
-            "win": True,
-            "draggable": False
+            "icon": "layers",
+            "win": "floating",
+            "draggable": False,
         }
 
     def add_measuretool(self):
         self.modules["wgu-measuretool"] = {
             "target": "menu",
-            "win": True,
+            "win": "floating",
+            "icon": "photo_size_select_small",
             "draggable": False,
             "strokeColor": "#c62828",
             "fillColor": "rgba(198,40,40,0.2)",
@@ -68,7 +85,8 @@ class WegueConfiguration:
     def add_infoclick(self):
         self.modules["wgu-infoclick"] = {
             "target": "menu",
-            "win": True,
+            "win": "floating",
+            "icon": "info",
             "draggable": False,
             "initPos": {
                 "left": 8,
@@ -109,4 +127,24 @@ class WegueConfiguration:
         self.modules["wgu-geolocator"] = {
             "target": "toolbar",
             "darkLayout": True
+        }
+
+    def add_maprecorder(self):
+        self.modules["wgu-maprecorder"] = {
+            "target": "toolbar",
+            "win": "floating",
+            "icon": "mdi-video",
+            "draggable": False,
+            "initPos": {
+                "left": 8,
+                "top": 230
+            }
+        }
+
+    def add_attribute_table(self):
+        self.modules["wgu-attributetable"] = {
+            "target": "menu",
+            "win": "floating",
+            "icon": "table_chart",
+            "syncTableMapSelection": True
         }

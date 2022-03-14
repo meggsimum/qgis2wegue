@@ -59,21 +59,14 @@ p, li { white-space: pre-wrap; }
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>Map Options:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="1">
-       <widget class="QCheckBox" name="q2w_info_click">
+      <item row="6" column="1">
+       <widget class="QCheckBox" name="q2w_permalink">
         <property name="text">
-         <string>Feature Info</string>
+         <string>Permalink</string>
         </property>
         <property name="checked">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -83,67 +76,17 @@ p, li { white-space: pre-wrap; }
          <string>Copyright Year</string>
         </property>
         <property name="checked">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QCheckBox" name="q2w_help_window">
+      <item row="6" column="0">
+       <widget class="QCheckBox" name="q2w_geolocator">
         <property name="text">
-         <string>Help Window</string>
+         <string>GeoLocator</string>
         </property>
         <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QCheckBox" name="q2w_measure_tool">
-        <property name="text">
-         <string>Measure Tool</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QCheckBox" name="q2w_max_extent">
-        <property name="text">
-         <string>Zoom To Maximum Extent</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QCheckBox" name="q2w_layer_list">
-        <property name="text">
-         <string>Layer List</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QCheckBox" name="q2w_permalink">
-        <property name="text">
-         <string>Permalink</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QCheckBox" name="q2w_geodata_drag_drop">
-        <property name="text">
-         <string>Geodata DragDrop</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -153,17 +96,107 @@ p, li { white-space: pre-wrap; }
          <string>Geocoder</string>
         </property>
         <property name="checked">
-         <bool>true</bool>
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="q2w_layer_list">
+        <property name="text">
+         <string>Layer List</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QCheckBox" name="q2w_view_animation">
+        <property name="text">
+         <string>View Animation</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="q2w_max_extent">
+        <property name="text">
+         <string>Zoom To Maximum Extent</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
       <item row="4" column="0">
-       <widget class="QCheckBox" name="q2w_geolocator">
+       <widget class="QCheckBox" name="q2w_overview_map">
         <property name="text">
-         <string>GeoLocator</string>
+         <string>Overview Map</string>
         </property>
         <property name="checked">
-         <bool>true</bool>
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="q2w_measure_tool">
+        <property name="text">
+         <string>Measure Tool</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="q2w_geodata_drag_drop">
+        <property name="text">
+         <string>Geodata DragDrop</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="q2w_info_click">
+        <property name="text">
+         <string>Feature Info</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="q2w_help_window">
+        <property name="text">
+         <string>Help Window</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QCheckBox" name="q2w_map_recorder">
+        <property name="text">
+         <string>MapRecorder</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QCheckBox" name="q2w_attribute_table">
+        <property name="text">
+         <string>MapRecorder</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
