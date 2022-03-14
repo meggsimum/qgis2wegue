@@ -176,12 +176,6 @@ class qgis2wegue:
             if result_layer:
                 self.wegue_conf.mapLayers.append(result_layer)
 
-        # optional properties
-        self.wegue_conf.title = self.dlg.q2w_title_widget.text()
-        self.wegue_conf.footerTextLeft = self.dlg.q2w_footer_left_widget.text()
-        self.wegue_conf.footerTextRight = \
-            self.dlg.q2w_footer_right_widget.text()
-
         # add checkbox properties
         self.wegue_conf.showCopyrightYear = \
             self.dlg.q2w_copyright_year.isChecked()
@@ -203,13 +197,13 @@ class qgis2wegue:
 
         if self.dlg.q2w_geocoder.isChecked():
             self.wegue_conf.add_geocoder()
-        
+
         if self.dlg.q2w_geodata_drag_drop.isChecked():
             self.wegue_conf.add_map_geodata_drag_drop()
-        
+
         if self.dlg.q2w_permalink.isChecked():
             self.wegue_conf.add_permalink()
-        
+
         if self.dlg.q2w_geolocator.isChecked():
             self.wegue_conf.add_geolocator()
 
