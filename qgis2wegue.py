@@ -138,12 +138,8 @@ class qgis2wegue:
 
         dir_exists = os.path.exists(base_dir)
 
-        # wegue config files must match this pattern
-        file_is_valid = (
-            file == 'app-conf.json') | (file.startswith('app-conf-') & file.endswith('.json'))
-
         enabled = False
-        if (file != "") & dir_exists & file_is_valid:
+        if (file != "") & dir_exists & file.endswith('.json'):
             # output path valid
             enabled = True
 
