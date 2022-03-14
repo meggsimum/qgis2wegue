@@ -1,6 +1,6 @@
 ![logo](logo/logo.png)
 
-# QGIS2Wegue 
+# QGIS2Wegue
 
 A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configurations based on a QGIS project. Supported formats are: `WMS`, `XYZ`, `KML`, `GeoJSON`, `WFS`
 
@@ -10,7 +10,7 @@ A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configura
 
 - Add all your desired layers to QGIS
 - Open the plugin, chose a filepath and click `OK`
-- Now you have a configuration file that works with Wegue 
+- Now you have a configuration file that works with Wegue
 
 ## Installation
 
@@ -36,6 +36,12 @@ Update the plugin with `git pull https://github.com/meggsimum/qgis2wegue` and re
 [assets/demo_project.qgs](assets/demo_project.qgs) is a sample QGIS project which is useful for testing.
 
 ## Development Snippets
+
+Install `pyqt5-dev-tools`. On Debian/Ubuntu:
+
+```shell
+sudo apt-get install pyqt5-dev-tools
+```
 
 Check code quality and errors:
 
