@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>803</width>
-    <height>754</height>
+    <width>801</width>
+    <height>588</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -34,7 +34,7 @@
      <x>10</x>
      <y>10</y>
      <width>781</width>
-     <height>731</height>
+     <height>561</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -48,7 +48,8 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt;&quot;&gt;This plugin creates a &lt;/span&gt;&lt;a href=&quot;https://github.com/meggsimum/wegue&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;Wegue&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt;&quot;&gt; configuration from a QGIS project. It automatically takes the zoom level and map position. Moreover it converts all layers of the project to Wegue. This file can either be used directly with Wegue or may serve as a basis for manual customization. &lt;br /&gt;&lt;br /&gt;The final file must be called &amp;quot;app-conf.json&amp;quot; or &amp;quot;app-conf-&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#4e9a06;&quot;&gt;yourCustomName&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt;&quot;&gt;.json&amp;quot;&lt;br /&gt;&lt;br /&gt;Supported layer formats: &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;WMS&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;XYZ&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;KML&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;GeoJSON&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;WFS&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;Let us know if there is something not working as expected. Either open an &lt;/span&gt;&lt;a href=&quot;https://github.com/meggsimum/qgis2wegue/issues/new&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;issue on GitHub&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt; or write us an &lt;/span&gt;&lt;a href=&quot;mailto:info@jakobmiksch.eu&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;email&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;.  Thanks!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;This plugin creates a &lt;/span&gt;&lt;a href=&quot;https://github.com/meggsimum/wegue&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;Wegue&lt;/span&gt;&lt;/a&gt; &lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;configuration from a QGIS project. It automatically reads the zoom level and the position from the map. Moreover it converts all layers of the project to Wegue. This file can either be used directly with Wegue or may serve as a basis for manual customization. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;&lt;br /&gt;Supported layer formats: &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;WMS&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;XYZ&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;KML&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;GeoJSON&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;WFS&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;Let us know if there is something not working as expected. Either open an &lt;/span&gt;&lt;a href=&quot;https://github.com/meggsimum/qgis2wegue/issues/new&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;issue on GitHub&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt; or write us an &lt;/span&gt;&lt;a href=&quot;mailto:info@meggsimum.de&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;email&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;. Also have a look at the &lt;/span&gt;&lt;a href=&quot;http://www.wegue.org&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;documention of Wegue&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:11pt; color:#000000;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="openExternalLinks">
        <bool>true</bool>
@@ -60,7 +61,7 @@ p, li { white-space: pre-wrap; }
     </item>
     <item>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="6" column="1">
+      <item row="10" column="1">
        <widget class="QCheckBox" name="q2w_permalink">
         <property name="text">
          <string>Permalink</string>
@@ -70,117 +71,7 @@ p, li { white-space: pre-wrap; }
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="q2w_copyright_year">
-        <property name="text">
-         <string>Copyright Year</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QCheckBox" name="q2w_geolocator">
-        <property name="text">
-         <string>GeoLocator</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QCheckBox" name="q2w_geocoder">
-        <property name="text">
-         <string>Geocoder</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QCheckBox" name="q2w_layer_list">
-        <property name="text">
-         <string>Layer List</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QCheckBox" name="q2w_view_animation">
-        <property name="text">
-         <string>View Animation</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QCheckBox" name="q2w_max_extent">
-        <property name="text">
-         <string>Zoom To Maximum Extent</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QCheckBox" name="q2w_overview_map">
-        <property name="text">
-         <string>Overview Map</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QCheckBox" name="q2w_measure_tool">
-        <property name="text">
-         <string>Measure Tool</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QCheckBox" name="q2w_geodata_drag_drop">
-        <property name="text">
-         <string>Geodata DragDrop</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QCheckBox" name="q2w_info_click">
-        <property name="text">
-         <string>Feature Info</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QCheckBox" name="q2w_help_window">
-        <property name="text">
-         <string>Help Window</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
+      <item row="9" column="1">
        <widget class="QCheckBox" name="q2w_map_recorder">
         <property name="text">
          <string>MapRecorder</string>
@@ -190,13 +81,130 @@ p, li { white-space: pre-wrap; }
         </property>
        </widget>
       </item>
-      <item row="5" column="0">
-       <widget class="QCheckBox" name="q2w_attribute_table">
+      <item row="10" column="0">
+       <widget class="QCheckBox" name="q2w_geolocator">
         <property name="text">
-         <string>MapRecorder</string>
+         <string>GeoLocator</string>
         </property>
         <property name="checked">
          <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QCheckBox" name="q2w_geocoder">
+        <property name="text">
+         <string>Geocoder</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QCheckBox" name="q2w_attribute_table">
+        <property name="text">
+         <string>Attribute Table</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="q2w_layer_list">
+        <property name="text">
+         <string>Layer List</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QCheckBox" name="q2w_view_animation">
+        <property name="text">
+         <string>View Animation</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QCheckBox" name="q2w_max_extent">
+        <property name="text">
+         <string>Zoom To Maximum Extent</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QCheckBox" name="q2w_overview_map">
+        <property name="text">
+         <string>Overview Map</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QCheckBox" name="q2w_measure_tool">
+        <property name="text">
+         <string>Measure Tool</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QCheckBox" name="q2w_geodata_drag_drop">
+        <property name="text">
+         <string>Geodata DragDrop</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="q2w_info_click">
+        <property name="text">
+         <string>Feature Info</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QCheckBox" name="q2w_help_window">
+        <property name="text">
+         <string>Help Window</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="q2w_copyright_year">
+        <property name="text">
+         <string>Copyright Year</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Map Modules:</string>
         </property>
        </widget>
       </item>
@@ -214,7 +222,7 @@ p, li { white-space: pre-wrap; }
       <property name="iconSize">
        <size>
         <width>90</width>
-        <height>16</height>
+        <height>14</height>
        </size>
       </property>
       <property name="color">

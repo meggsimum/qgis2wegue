@@ -219,9 +219,7 @@ class qgis2wegue:
 
         # color
         qt_color = self.dlg.q2w_color_widget.color()
-
         hex_color = rgb2hex(qt_color.red(), qt_color.green(), qt_color.blue())
-
         self.wegue_conf.colorTheme = {
             "themes": {
                 "light": {
