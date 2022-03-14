@@ -5,12 +5,15 @@ class WegueConfiguration:
     """Contains parameters of a Wegue configuration"""
 
     def __init__(self):
-        self.title = "Vue.js / OpenLayers WebGIS"
-        self.baseColor = "green darken-3"
+        self.colorTheme = {
+            "themes": {
+                "light": {
+                    "primary": "#fdbf6f"
+                }
+            }
+        }
         self.logo = "https://dummyimage.com/100x100/aaa/fff&text=Wegue"
         self.logoSize = 100
-        self.footerTextLeft = "Powered by <a href='https://meggsimum.de/wegue/' target='_blank'>Wegue WebGIS</a>"
-        self.footerTextRight = "meggsimum"
         self.showCopyrightYear = True
         self.mapZoom = 2
         self.mapCenter = (0, 0)
@@ -40,7 +43,7 @@ class WegueConfiguration:
             "projection": "EPSG:4326",
             "paramPrefix": "",
             "history": True
-        }        
+        }
 
     def add_layer_list(self):
         self.modules["wgu-layerlist"] = {
@@ -107,4 +110,3 @@ class WegueConfiguration:
             "target": "toolbar",
             "darkLayout": True
         }
-

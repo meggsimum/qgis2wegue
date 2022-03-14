@@ -14,7 +14,9 @@ from .wegueConf import WegueConfiguration
 
 from .wegue_util import (center2webmercator,
                          scale2zoom,
-                         extract_wegue_layer_config)
+                         extract_wegue_layer_config,
+                         rgb2hex
+                         )
 
 
 class qgis2wegue:
@@ -208,10 +210,17 @@ class qgis2wegue:
             self.wegue_conf.add_geolocator()
 
         # color
-        color_rgb = self.dlg.q2w_color_widget.color().getRgb()
-        # drop alpha value
-        color_rgb = color_rgb[0:3]
-        self.wegue_conf.baseColor = "rgb" + str(color_rgb)
+        qt_color = self.dlg.q2w_color_widget.color()
+
+        hex_color = rgb2hex(qt_color.red(), qt_color.green(), qt_color.blue())
+
+        self.wegue_conf.colorTheme = {
+            "themes": {
+                "light": {
+                    "primary": hex_color
+                }
+            }
+        }
 
         # path for config
         user_input = self.dlg.q2w_file_widget.filePath()
