@@ -46,8 +46,11 @@ sudo apt-get install pyqt5-dev-tools
 Check code quality and errors:
 
 ```shell
+# installation if needed
+pip install --user pylint pycodestyle
+
 pylint --reports=n --rcfile=pylintrc .
-pycodestyle --repeat --ignore=E203,E121,E122,E123,E124,E125,E126,E127,E128 --exclude=resources.py .
+pycodestyle --repeat --ignore=W504,E203,E121,E122,E123,E124,E125,E126,E127,E128 --exclude=resources.py .
 ```
 
 Compile resources e.g. when logo has changed:

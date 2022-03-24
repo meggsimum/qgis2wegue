@@ -36,7 +36,7 @@ class WegueConfiguration:
         }
 
     def add_permalink(self):
-        self.permalink =  {
+        self.permalink = {
             "location": "hash",
             "layers": True,
             "extent": False,
