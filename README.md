@@ -67,7 +67,6 @@ TARGET_DIR=your/custom/path
 
 TMP_PLUGIN_DIR=${TARGET_DIR}/qgis2wegue
 
-rm -rf ${TMP_PLUGIN_DIR}
 mkdir ${TMP_PLUGIN_DIR}
 cp -r \
   *.py \
