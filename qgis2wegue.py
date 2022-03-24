@@ -14,7 +14,9 @@ from .wegueConf import WegueConfiguration
 
 from .wegue_util import (center2webmercator,
                          scale2zoom,
-                         extract_wegue_layer_config)
+                         extract_wegue_layer_config,
+                         rgb2hex
+                         )
 
 
 class qgis2wegue:
@@ -136,12 +138,8 @@ class qgis2wegue:
 
         dir_exists = os.path.exists(base_dir)
 
-        # wegue config files must match this pattern
-        file_is_valid = (
-            file == 'app-conf.json') | (file.startswith('app-conf-') & file.endswith('.json'))
-
         enabled = False
-        if (file != "") & dir_exists & file_is_valid:
+        if (file != "") & dir_exists & file.endswith('.json'):
             # output path valid
             enabled = True
 
@@ -149,7 +147,7 @@ class qgis2wegue:
 
     def store_wegue_conf_to_file(self):
         """
-        Collects all paramters from QGIS and the plugin form
+        Collects all parameters from QGIS and the plugin form
         and creates the Wegue configuration
         """
 
@@ -176,12 +174,6 @@ class qgis2wegue:
             if result_layer:
                 self.wegue_conf.mapLayers.append(result_layer)
 
-        # optional properties
-        self.wegue_conf.title = self.dlg.q2w_title_widget.text()
-        self.wegue_conf.footerTextLeft = self.dlg.q2w_footer_left_widget.text()
-        self.wegue_conf.footerTextRight = \
-            self.dlg.q2w_footer_right_widget.text()
-
         # add checkbox properties
         self.wegue_conf.showCopyrightYear = \
             self.dlg.q2w_copyright_year.isChecked()
@@ -203,21 +195,38 @@ class qgis2wegue:
 
         if self.dlg.q2w_geocoder.isChecked():
             self.wegue_conf.add_geocoder()
-        
+
         if self.dlg.q2w_geodata_drag_drop.isChecked():
             self.wegue_conf.add_map_geodata_drag_drop()
-        
+
         if self.dlg.q2w_permalink.isChecked():
             self.wegue_conf.add_permalink()
-        
+
         if self.dlg.q2w_geolocator.isChecked():
             self.wegue_conf.add_geolocator()
 
+        if self.dlg.q2w_overview_map.isChecked():
+            self.wegue_conf.add_overview_map()
+
+        if self.dlg.q2w_view_animation.isChecked():
+            self.wegue_conf.add_view_animation()
+
+        if self.dlg.q2w_map_recorder.isChecked():
+            self.wegue_conf.add_maprecorder()
+
+        if self.dlg.q2w_attribute_table.isChecked():
+            self.wegue_conf.add_attribute_table()
+
         # color
-        color_rgb = self.dlg.q2w_color_widget.color().getRgb()
-        # drop alpha value
-        color_rgb = color_rgb[0:3]
-        self.wegue_conf.baseColor = "rgb" + str(color_rgb)
+        qt_color = self.dlg.q2w_color_widget.color()
+        hex_color = rgb2hex(qt_color.red(), qt_color.green(), qt_color.blue())
+        self.wegue_conf.colorTheme = {
+            "themes": {
+                "light": {
+                    "primary": hex_color
+                }
+            }
+        }
 
         # path for config
         user_input = self.dlg.q2w_file_widget.filePath()

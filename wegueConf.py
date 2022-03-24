@@ -5,12 +5,15 @@ class WegueConfiguration:
     """Contains parameters of a Wegue configuration"""
 
     def __init__(self):
-        self.title = "Vue.js / OpenLayers WebGIS"
-        self.baseColor = "green darken-3"
+        self.colorTheme = {
+            "themes": {
+                "light": {
+                    "primary": "#fdbf6f"
+                }
+            }
+        }
         self.logo = "https://dummyimage.com/100x100/aaa/fff&text=Wegue"
         self.logoSize = 100
-        self.footerTextLeft = "Powered by <a href='https://meggsimum.de/wegue/' target='_blank'>Wegue WebGIS</a>"
-        self.footerTextRight = "meggsimum"
         self.showCopyrightYear = True
         self.mapZoom = 2
         self.mapCenter = (0, 0)
@@ -33,26 +36,43 @@ class WegueConfiguration:
         }
 
     def add_permalink(self):
-        self.permalink =  {
+        self.permalink = {
             "location": "hash",
             "layers": True,
             "extent": False,
             "projection": "EPSG:4326",
             "paramPrefix": "",
             "history": True
-        }        
+        }
+
+    def add_overview_map(self):
+        self.overviewMap = {
+            "visible": False
+        }
+
+    def add_view_animation(self):
+        self.viewAnimation = {
+            "type": "fly",
+            "options": {
+                "duration": 3000,
+                "zoom": 15,
+                "maxZoom": 15
+            }
+        }
 
     def add_layer_list(self):
         self.modules["wgu-layerlist"] = {
             "target": "menu",
-            "win": True,
-            "draggable": False
+            "icon": "layers",
+            "win": "floating",
+            "draggable": False,
         }
 
     def add_measuretool(self):
         self.modules["wgu-measuretool"] = {
             "target": "menu",
-            "win": True,
+            "win": "floating",
+            "icon": "photo_size_select_small",
             "draggable": False,
             "strokeColor": "#c62828",
             "fillColor": "rgba(198,40,40,0.2)",
@@ -65,7 +85,8 @@ class WegueConfiguration:
     def add_infoclick(self):
         self.modules["wgu-infoclick"] = {
             "target": "menu",
-            "win": True,
+            "win": "floating",
+            "icon": "info",
             "draggable": False,
             "initPos": {
                 "left": 8,
@@ -108,3 +129,22 @@ class WegueConfiguration:
             "darkLayout": True
         }
 
+    def add_maprecorder(self):
+        self.modules["wgu-maprecorder"] = {
+            "target": "toolbar",
+            "win": "floating",
+            "icon": "mdi-video",
+            "draggable": False,
+            "initPos": {
+                "left": 8,
+                "top": 230
+            }
+        }
+
+    def add_attribute_table(self):
+        self.modules["wgu-attributetable"] = {
+            "target": "menu",
+            "win": "floating",
+            "icon": "table_chart",
+            "syncTableMapSelection": True
+        }

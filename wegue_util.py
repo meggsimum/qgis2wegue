@@ -9,6 +9,15 @@ from qgis.core import (QgsCoordinateTransform,
                        QgsCoordinateReferenceSystem)
 
 
+def rgb2hex(r, g, b):
+    """
+    Converts a RGB color to hex code
+
+    Taken from https://stackoverflow.com/a/43572620
+    """
+    return "#{:02x}{:02x}{:02x}".format(r, g, b)
+
+
 def center2webmercator(center_point, qgis_instance):
     """Converts a point geometry to EPSG:3857"""
 

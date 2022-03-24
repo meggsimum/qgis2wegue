@@ -1,6 +1,6 @@
 ![logo](logo/logo.png)
 
-# QGIS2Wegue 
+# QGIS2Wegue
 
 A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configurations based on a QGIS project. Supported formats are: `WMS`, `XYZ`, `KML`, `GeoJSON`, `WFS`
 
@@ -10,7 +10,7 @@ A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configura
 
 - Add all your desired layers to QGIS
 - Open the plugin, chose a filepath and click `OK`
-- Now you have a configuration file that works with Wegue 
+- Now you have a configuration file that works with Wegue
 
 ## Installation
 
@@ -37,11 +37,20 @@ Update the plugin with `git pull https://github.com/meggsimum/qgis2wegue` and re
 
 ## Development Snippets
 
+Install `pyqt5-dev-tools`. On Debian/Ubuntu:
+
+```shell
+sudo apt-get install pyqt5-dev-tools
+```
+
 Check code quality and errors:
 
 ```shell
+# installation if needed
+pip install --user pylint pycodestyle
+
 pylint --reports=n --rcfile=pylintrc .
-pycodestyle --repeat --ignore=E203,E121,E122,E123,E124,E125,E126,E127,E128 --exclude=resources.py .
+pycodestyle --repeat --ignore=W504,E203,E121,E122,E123,E124,E125,E126,E127,E128 --exclude=resources.py .
 ```
 
 Compile resources e.g. when logo has changed:
@@ -58,7 +67,6 @@ TARGET_DIR=your/custom/path
 
 TMP_PLUGIN_DIR=${TARGET_DIR}/qgis2wegue
 
-rm -rf ${TMP_PLUGIN_DIR}
 mkdir ${TMP_PLUGIN_DIR}
 cp -r \
   *.py \
