@@ -1,7 +1,7 @@
 [general]
 name=QGIS2Wegue
 qgisMinimumVersion=3.4
-version=1.1.0
+version=1.1.1
 author=Jakob Miksch
 email=info@jakobmiksch.eu
 tracker=https://github.com/meggsimum/qgis2wegue/issues
