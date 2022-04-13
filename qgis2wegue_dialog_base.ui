@@ -246,7 +246,7 @@ p, li { white-space: pre-wrap; }
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>Output path (required) </string>
+       <string>Output path (must be a &quot;.json&quot; file):</string>
       </property>
      </widget>
     </item>
