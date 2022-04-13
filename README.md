@@ -78,3 +78,10 @@ cp -r \
   ${TMP_PLUGIN_DIR}
 ```
 
+## Release
+
+- set new version in `metadata.txt`
+- set new version as tag in git
+- make GitHub release and add zipped plugin
+- publish plugin on QGIS plugin repository
+
