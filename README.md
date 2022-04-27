@@ -2,7 +2,7 @@
 
 # QGIS2Wegue
 
-A QGIS plugin for creating [Wegue](https://github.com/meggsimum/wegue) configurations based on a QGIS project. Supported formats are: `WMS`, `XYZ`, `KML`, `GeoJSON`, `WFS`
+A QGIS plugin for creating [Wegue](https://github.com/wegue-oss/wegue) configurations based on a QGIS project. Supported formats are: `WMS`, `XYZ`, `KML`, `GeoJSON`, `WFS`
 
 ![Screenshot Plugin](screenshot_gui.png)
 
